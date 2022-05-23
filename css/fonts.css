@@ -2,23 +2,23 @@
 	font-family: 'HelveticaNeueCyr';
 	font-weight: 400;
 	font-style: normal;
-	src : url(local/assets/fonts/HelveticaNeueCyr/helveticaneuecyr-roman.ttf) format("truetype")
+	src : url(/local/assets/fonts/HelveticaNeueCyr/helveticaneuecyr-roman.ttf) format("truetype")
 }
 
 @font-face {
 	font-family: 'HelveticaNeueCyr';
 	font-weight: 700;
 	font-style: bold;
-	src:  url(local/assets/fonts/HelveticaNeueCyr/helveticaneuecyr-bold.ttf) format("truetype");
+	src:  url(/local/assets/fonts/HelveticaNeueCyr/helveticaneuecyr-bold.ttf) format("truetype");
 }
 
 @font-face {
   font-family: 'icomoon';
-  src:  url('/Users/airatvagapov/Desktop//Packs/local/assets/fonts/icomoon/icomoon.eot?wka84v');
-  src:  url('/Users/airatvagapov/Desktop//Packs/local/assets/fonts/icomoon/icomoon.eot?wka84v#iefix') format('embedded-opentype'),
-    url('/Users/airatvagapov/Desktop//Packs/local/assets/fonts/icomoon/icomoon.ttf?wka84v') format('truetype'),
-    url('/Users/airatvagapov/Desktop//Packs/local/assets/fonts/icomoon/icomoon.woff?wka84v') format('woff'),
-    url('local/assets/fonts/icomoon/icomoon.svg?wka84v#icomoon') format('svg');
+  src:  url(/local/assets/fonts/icomoon/icomoon.eot);
+  src:  url(/local/assets/fonts/icomoon/icomoon.eot) format('embedded-opentype'),
+    url(/local/assets/fonts/icomoon/icomoon.ttf) format('truetype'),
+    url(/local/assets/fonts/icomoon/icomoon.woff) format('woff'),
+    url(/local/assets/fonts/icomoon/icomoon.svg) format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -125,7 +125,6 @@
 }
 .icon-return-copy:before {
   content: "\e949";
-  color: #d6d6d6;
 }
 .icon-valentines-heart-1:before {
   content: "\e948";
@@ -479,7 +478,6 @@
 }
 .icon-return:before {
   content: "\e94c";
-  color: #d6d6d6;
 }
 .icon-ruble:before {
   content: "\e94d";

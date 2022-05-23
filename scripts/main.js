@@ -158,12 +158,27 @@ $(document).ready(function () {
 		for (var i = 0; i < str.length; i++) {
 		r += mapKey[str.charAt(i)] || str.charAt(i);
 		};
-		// $("#idinput").val(r).trigger('keydown');
-		// Тригерр, если это поле ввода для другого плагина, например autocomplete
+
 		$("#form-secname").val(r);
 		});
-		///Распознаем нажатие клавиши с английской буквой и переводим на русс.
+
+		// Слайдер баннера
+		let owl = $('.owl-carousel'); 
+		owl.owlCarousel({
+			loop: true,
+			items: 1,
+		});
+		let fwdBanner = $('.banner-left').find('.arrow-fwd')
+		let prevBanner = $('.banner-left').find('.arrow-prev')
+		
+		fwdBanner.click(function () {
+			owl.trigger('next.owl.carousel');
+		});
+		prevBanner.click(function () {
+			owl.trigger('prev.owl.carousel');
+		});
 	
+		
 		
 
 });	

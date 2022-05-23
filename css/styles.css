@@ -364,6 +364,7 @@
     border-radius: 2px;
     display: flex;
     flex-direction: column;
+    min-width: 23.75%;
 
 }
 
@@ -406,7 +407,7 @@
 
 
 .banner-and-tabs {
-    /*flex-basis: 100%;*/
+    overflow: hidden;
 }
 
 .banner {
@@ -527,10 +528,13 @@
     justify-content: center;
 }
 
+.banner-img-mobile {
+    display: none;
+}
+
 .banner-img {
     /*position: relative;
 	top: 18px;*/
-
 }
 
 .banner-tabs {
