@@ -27,10 +27,10 @@
 
 /*Right Top Menu*/
 
-.header_top_left {
+/* .header_top_left {
     display: flex;
     align-items: center;
-}
+} */
 
 .menu_left {
     display: flex;
@@ -43,13 +43,18 @@
 
 /*Right Top Menu*/
 
-.header_top_right {}
+/* .header_top_right {
+    display: flex;
+    align-items: center;
+    min-height: 100%;
+} */
 
 .menu_right {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     font-size: 14px;
     line-height: 14px;
+    min-height: 100%;
 }
 
 .menu_right>a {
@@ -66,6 +71,7 @@
 
 .button_black {
     color: #000000;
+    text-align: center;
 }
 
 .button_callback {
@@ -77,6 +83,49 @@
     border-bottom: none;
 }
 
+/* Окно выбора города */
+
+.city-submit-window {
+    display: none;
+    position: absolute;
+    top: 43px;
+    background-color: #fff;
+    z-index: 10;
+    padding: 16px 24px;
+    border-radius: 0px 0px 2px 2px;
+    box-shadow: 0px 4px 10px 0px #0000001A;
+    border: 1px solid #D6D6D6;
+}
+
+
+
+.city-submit-window::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 9px 9px 9px;
+    border-color: transparent transparent #FFF transparent;
+    z-index: 30;
+    position: absolute;
+    top: -9px;
+    left: 26px;
+}
+
+.city-submit-window::before {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 11px 11px 11px;
+    border-color: transparent transparent #D6D6D6 transparent;
+    z-index: 20;
+    position: absolute;
+    top: -11px;
+}
+
 /*Всплывающее меню в хедере*/
 
 .menu_drop {
@@ -85,14 +134,19 @@
 }
 
 .menu_drop_container {
+    display: none;
     position: absolute;
-    top: 41px;
+    top: 38px;
     background-color: #fff;
     z-index: 10;
 }
 
+.dropdown-active {
+    display: block;
+}
+
 .menu_drop_menu {
-    display: none;
+    /* display: block; */
     background-color: #fff;
     padding: 16px 24px;
     border-radius: 0px 0px 2px 2px;
@@ -111,16 +165,14 @@
     margin-top: 0;
 }
 
-.menu_drop:hover .menu_drop_menu {
-    display: block;
-}
-
 .menu_drop:hover>a {
     color: #3B52F5;
     -webkit-transition: color .2s;
     -o-transition: color .2s;
     transition: color .2s;
 }
+
+.submenu-active {}
 
 
 .icon-dorp-2 {
@@ -145,7 +197,12 @@
 .drop-active:hover .icon-dorp-2 {
     transform: rotate(180deg);
     color: #3B52F5;
+    -webkit-transition: color .2s;
+    -o-transition: color .2s;
+    transition: color .2s;
 }
+
+
 
 /*Нижняя часть хэдера*/
 
@@ -384,7 +441,7 @@
 
 
 .arrow-fwd>span {
-    /*transform: rotate(180deg);*/
+    /* transform: rotate(180deg); */
     display: block;
 }
 
@@ -447,6 +504,7 @@
     background-color: #3B52F5;
     text-align: center;
     display: inline-block;
+    border-radius: 2px;
 
 }
 
@@ -873,6 +931,7 @@
     white-space: nowrap;
     color: #FFF;
     display: inline-block;
+    cursor: pointer;
 }
 
 .standart-btn:hover {
@@ -1454,3 +1513,181 @@ footer {
 .header-mobile-1 {
     display: none;
 }
+
+/* Попап обратного звонка */
+
+.callback-popup-fade {
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    
+}
+
+.callback-popup-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    
+}
+
+.callback-popup-content {
+    border-radius: 2px;
+    width: 363px;
+    background-color: #fff;    
+    overflow-y: auto;
+}
+
+.callback-popup-head {
+    position: relative;
+    border-bottom: 1px solid #DDDDDD;
+    padding: 24px;
+}
+
+.popup-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+
+.popup-flex-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.callback-popup-form {
+    padding: 24px;   
+}
+
+.form-field {
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    /* height: 45px; */
+    padding: 14px 16px;
+}
+
+.delimiter {
+    margin-right: 10px;
+    margin-left: 10px;
+    font-style: 14px;
+    line-height: 18px;
+}
+.now-check {
+    margin-left: 24px;
+    display: flex;
+}
+
+ .checkbox-text {
+    color: #939393;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.checkbox-link {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+
+.checkbox {
+    display: inline-flex;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    position: relative;
+}
+
+.checkbox:hover .checkbox-text {
+    color: #000;
+}
+
+.checkbox:hover .checkbox-label {
+    background-color: #3B52F5;
+}
+
+.checkbox input {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+}
+
+.checkbox input:checked~.checkbox-label, 
+.checkbox input:checked~.checkbox-text .checkbox-label {
+    background-color: #3B52F5;   
+}
+
+.checkbox input:checked~.checkbox-label::before, 
+.checkbox input:checked~.checkbox-text .checkbox-label::before {
+    content: '\e945';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'icomoon';
+    color: #fff;
+    font-size: 7px;
+
+}
+
+.checkbox-label {
+    border-radius: 2px;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    background-color: #EEEEF2;
+    position: relative;
+    cursor: pointer;
+}
+
+
+/* Попап success заказ обратной связи */
+
+.callback-popup-success-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+}
+
+.callback-popup-success-content {
+    background-color: #fff;
+    padding: 24px;
+    position: relative;
+    width: 363px;
+}
+
+.success-header {
+    display: flex;
+    align-items: center;
+}
+
+.success-icon {
+    font-size: 16px;
+}
+
+.success-close-btn {
+    color: #939393;
+    border-bottom: 1px solid #939393;
+    border-style: dotted;
+}
+
+.success-close-btn:hover {
+    color: #3B52F5;
+}
+
+
+
+

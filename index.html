@@ -5,12 +5,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>«Мир Упаковки» - интернет-магазин упаковочных материалов, товаров для дома и офиса</title>
-    <link rel="stylesheet" href="/Users/airatvagapov/Desktop/Packs/css/styles.css">
-    <link rel="stylesheet" href="/Users/airatvagapov/Desktop/Packs/css/main.css">
-    <link rel="stylesheet" href="/Users/airatvagapov/Desktop/Packs/css/fonts.css">
-    <link rel="stylesheet" href="/Users/airatvagapov/Desktop/Packs/css/media.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/media.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="text/javascript" src="/Users/airatvagapov/Desktop/Packs/scripts/main.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+    <script src="scripts/vendor/jquery.json.min.js"></script>
 </head>
 
 <body>
@@ -21,8 +22,8 @@
                 <div class="header_top-2">
                     <div class="header_top_left">
                         <div class="menu_left">
-                            <div class="menu_drop mr40">
-                                <a class="button_grey" href="">О компании</a>
+                            <div class="mr40">
+                                <a class="button_grey a-blue-hover" href="">О компании</a>
                             </div>
                             <div class="menu_drop drop-active mr40">
                                 <a class="button_grey" href="">Покупателям</a>
@@ -34,10 +35,10 @@
                                 <span class="icon-drop icon-dorp-2"></span>
                                 <div class="menu_drop_container">
                                     <div class="menu_drop_menu">
-                                        <a href="">Новинки</a>
-                                        <a href="">Популярные товары</a>
-                                        <a href="">Распродажи</a>
-                                        <a href="">Скидки 2020</a>
+                                        <a class="a-blue-hover" href="">Новинки</a>
+                                        <a class="a-blue-hover" href="">Популярные товары</a>
+                                        <a class="a-blue-hover" href="">Распродажи</a>
+                                        <a class="a-blue-hover" href="">Скидки 2020</a>
                                     </div>
                                 </div>
                             </div>
@@ -45,19 +46,43 @@
                                 <span class="icon-box icon-head-menu"></span>
                                 <a class="button_grey" href="">Изготовление</a>
                                 <span class="icon-drop icon-dorp-2"></span>
+
+                                <div class="menu_drop_container">
+                                    <div class="menu_drop_menu">
+                                        <a class="a-blue-hover" href="">Новинки</a>
+                                        <a class="a-blue-hover" href="">Популярные товары</a>
+                                        <a class="a-blue-hover" href="">Распродажи</a>
+                                        <a class="a-blue-hover" href="">Скидки 2020</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="header_top_right">
                         <div class="menu_right">
-                            <div class="city-select mr16">
+                            <div class="menu_drop drop-active mr16" id="city">
                                 <span class="icon-geo icon-head-menu-2"></span>
-                                <a class="button_black a-blue-hover " href="">Набережные Челны</a>
+                                <a class=" button_black a-blue-hover ">Набережные Челны</a>
                                 <span class="icon-drop icon-dorp-2"></span>
+                                
+                                <div class="city-submit-window">
+                                    <div class="city-submit-window-content">
+                                        <p class="city-submit-text black-text mb16">Ваш город <b>Набережные Челны?</b></p>
+                                        <button class="submit-close standart-btn mr16">Да</button>
+                                        <a href="/" class="blue-txt-link">Выбрать другой</a>
+                                    </div>
+                                </div>
                             </div>
-                            <span class="icon-phone icon-head-menu-2"></span>
-                            <a class="button_black a-blue-hover" href="tel:78432009934">+7 (843) 200-99-34</a>
-                            <a class="button_callback a-blue-hover-no-underline" href="">Заказать звонок</a>
+
+                            
+
+                            <div class="menu_drop mr16">
+                                <span class="icon-phone icon-head-menu-2"></span>
+                                <a class="button_black a-blue-hover" href="tel:78432009934">+7 (843) 200-99-34</a>
+                            </div>
+                            <div class="callback">
+                                <a class="button_callback a-blue-hover-no-underline">Заказать звонок</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -72,7 +97,7 @@
                         <div class="logo-left">
                             20 лет
                         </div>
-                        <img class="logo-img" src="/Users/airatvagapov/Desktop/Packs/local/assets/img/logo.png">
+                        <img class="logo-img" src="local/assets/img/logo.png">
                     </a>
                     <!-- Поисковая строка -->
                     <div class="header_bottom-center mr24">
@@ -116,7 +141,7 @@
                     <div class="logo-left">
                         20 лет
                     </div>
-                    <img class="logo-img" src="/Users/airatvagapov/Desktop/Packs/local/assets/img/logo.png">
+                    <img class="logo-img" src="local/assets/img/logo.png">
                 </a>
                 <div class="city-select mr16">
                     <span class="icon-geo icon-head-menu-2"></span>
@@ -160,7 +185,7 @@
                     <div class="logo-left">
                         20 лет
                     </div>
-                    <img class="logo-img" src="/Users/airatvagapov/Desktop/Packs/local/assets/img/logo.png">
+                    <img class="logo-img" src="local/assets/img/logo.png">
                 </a>
                 <div class="header_bottom-right">
                     <span class="icon-mobile-menu"></span>
@@ -253,7 +278,7 @@
                                 <span class="icon-return"></span>
                             </div>
                             <div class="arrow-fwd">
-                                <span class="icon-return1"></span>
+                                <span class="icon-return-copy"></span>
                             </div>
                         </div>
                         <div class="banner-text">
@@ -276,15 +301,15 @@
                         </div>
                     </div>
                     <div class="banner-right">
-                        <img class="banner-img" src="/Users/airatvagapov/Desktop/Packs/local/assets/img/chair-banner.png">
-                        <img class="banner-img-mobile" src="/Users/airatvagapov/Desktop/Packs/local/assets/img/chair-mobile.png">
+                        <img class="banner-img" src="local/assets/img/chair-banner.png">
+                        <img class="banner-img-mobile" src="local/assets/img/chair-mobile.png">
                     </div>
                 </div>
                 <div class="banner-tabs">
                     <div class="banner-tabs-col">
                         <div class="banner-tab">
                             <div class="banner-tab-img">
-                                <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/tab-bag.png">
+                                <img src="local/assets/img/tab-bag.png">
                             </div>
                             <div class="banner-tab-text">
                                 Изготовление пакетов с логотипом
@@ -294,7 +319,7 @@
                     <div class="banner-tabs-col">
                         <div class="banner-tab">
                             <div class="banner-tab-img">
-                                <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/tab-tape.png">
+                                <img src="local/assets/img/tab-tape.png">
                             </div>
                             <p class="banner-tab-text">Изготовление скотча с логотипом</p>
                         </div>
@@ -302,7 +327,7 @@
                     <div class="banner-tabs-col">
                         <div class="banner-tab">
                             <div class="banner-tab-img">
-                                <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/tab-box-open.png">
+                                <img src="local/assets/img/tab-box-open.png">
                             </div>
                             <div class="banner-tab-text">
                                 Изготовление гофрокоробок
@@ -325,7 +350,7 @@
                         <span class="icon-return"></span>
                     </div>
                     <div class="arrow-fwd">
-                        <span class="icon-return1"></span>
+                        <span class="icon-return-copy"></span>
                     </div>
                 </div>
             </div>
@@ -358,7 +383,7 @@
                                     </div>
                                 </div>
                                 <a href="/" class="item-img">
-                                    <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/card-img.png">
+                                    <img src="local/assets/img/card-img.png">
                                 </a>
                                 <div class="artic-fav">
                                     <div class="item-small-text">
@@ -432,7 +457,7 @@
                                     </div>
                                 </div>
                                 <a href="/" class="item-img">
-                                    <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/card-img.png">
+                                    <img src="local/assets/img/card-img.png">
                                 </a>
                                 <div class="artic-fav">
                                     <div class="item-small-text">
@@ -506,7 +531,7 @@
                                     </div>
                                 </div>
                                 <a href="/" class="item-img">
-                                    <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/card-img.png">
+                                    <img src="local/assets/img/card-img.png">
                                 </a>
                                 <div class="artic-fav">
                                     <div class="item-small-text">
@@ -580,7 +605,7 @@
                                     </div>
                                 </div>
                                 <a href="/" class="item-img">
-                                    <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/card-img.png">
+                                    <img src="local/assets/img/card-img.png">
                                 </a>
                                 <div class="artic-fav">
                                     <div class="item-small-text">
@@ -654,7 +679,7 @@
                                     </div>
                                 </div>
                                 <a href="/" class="item-img">
-                                    <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/card-img.png">
+                                    <img src="local/assets/img/card-img.png">
                                 </a>
                                 <div class="artic-fav">
                                     <div class="item-small-text">
@@ -730,7 +755,7 @@
                                     </div>
                                 </div>
                                 <a href="/" class="item-img">
-                                    <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/card-img.png">
+                                    <img src="local/assets/img/card-img.png">
                                 </a>
                                 <div class="artic-fav">
                                     <div class="item-small-text">
@@ -804,7 +829,7 @@
                                     </div>
                                 </div>
                                 <a href="/" class="item-img">
-                                    <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/card-img.png">
+                                    <img src="local/assets/img/card-img.png">
                                 </a>
                                 <div class="artic-fav">
                                     <div class="item-small-text">
@@ -878,7 +903,7 @@
                                     </div>
                                 </div>
                                 <a href="/" class="item-img">
-                                    <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/card-img.png">
+                                    <img src="local/assets/img/card-img.png">
                                 </a>
                                 <div class="artic-fav">
                                     <div class="item-small-text">
@@ -952,7 +977,7 @@
                                     </div>
                                 </div>
                                 <a href="/" class="item-img">
-                                    <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/card-img.png">
+                                    <img src="local/assets/img/card-img.png">
                                 </a>
                                 <div class="artic-fav">
                                     <div class="item-small-text">
@@ -1026,7 +1051,7 @@
                                     </div>
                                 </div>
                                 <a href="/" class="item-img">
-                                    <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/card-img.png">
+                                    <img src="local/assets/img/card-img.png">
                                 </a>
                                 <div class="artic-fav">
                                     <div class="item-small-text">
@@ -1104,7 +1129,7 @@
                                 </div>
                             </div>
                             <a href="/" class="item-img">
-                                <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/card-img.png">
+                                <img src="local/assets/img/card-img.png">
                             </a>
                             <div class="artic-fav">
                                 <div class="item-small-text">
@@ -1178,7 +1203,7 @@
                                 </div>
                             </div>
                             <a href="/" class="item-img">
-                                <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/card-img.png">
+                                <img src="local/assets/img/card-img.png">
                             </a>
                             <div class="artic-fav">
                                 <div class="item-small-text">
@@ -1252,7 +1277,7 @@
                                 </div>
                             </div>
                             <a href="/" class="item-img">
-                                <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/card-img.png">
+                                <img src="local/assets/img/card-img.png">
                             </a>
                             <div class="artic-fav">
                                 <div class="item-small-text">
@@ -1326,7 +1351,7 @@
                                 </div>
                             </div>
                             <a href="/" class="item-img">
-                                <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/card-img.png">
+                                <img src="local/assets/img/card-img.png">
                             </a>
                             <div class="artic-fav">
                                 <div class="item-small-text">
@@ -1400,7 +1425,7 @@
                                 </div>
                             </div>
                             <a href="/" class="item-img">
-                                <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/card-img.png">
+                                <img src="local/assets/img/card-img.png">
                             </a>
                             <div class="artic-fav">
                                 <div class="item-small-text">
@@ -1645,10 +1670,10 @@
                     </div>
                 </div>
                 <div class="page-banner-right">
-                    <img class="page-banner-img-desktop" src="/Users/airatvagapov/Desktop/Packs/local/assets/img/car.png">
+                    <img class="page-banner-img-desktop" src="local/assets/img/car.png">
                 </div>
                 <div class="page-banner-right-mobile">
-                    <img class="page-banner-img-mobile" src="/Users/airatvagapov/Desktop/Packs/local/assets/img/car.png">
+                    <img class="page-banner-img-mobile" src="local/assets/img/car.png">
                 </div>
             </div>
             <div class="pagination">
@@ -1678,7 +1703,7 @@
                         </div>
                     </div>
                     <div class="page-banner-right-mobile">
-                        <img class="page-banner-img-mobile" src="/Users/airatvagapov/Desktop/Packs/local/assets/img/car.png">
+                        <img class="page-banner-img-mobile" src="local/assets/img/car.png">
                     </div>
                 </div>
             </div>
@@ -1697,7 +1722,7 @@
                             <span class="icon-return"></span>
                         </div>
                         <div class="arrow-fwd">
-                            <span class="icon-return1"></span>
+                            <span class="icon-return-copy"></span>
                         </div>
                     </div>
                 </div>
@@ -1714,7 +1739,7 @@
                                     </div>
                                 </div>
                                 <a href="/" class="item-small-img">
-                                    <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/card-img.png">
+                                    <img src="local/assets/img/card-img.png">
                                 </a>
                                 <div class="item-price">
                                     <p class="item-price-sum">12 320</p>
@@ -1737,7 +1762,7 @@
                                     </div>
                                 </div>
                                 <a href="/" class="item-small-img">
-                                    <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/card-img.png">
+                                    <img src="local/assets/img/card-img.png">
                                 </a>
                                 <div class="item-price">
                                     <p class="item-price-sum">12 320</p>
@@ -1760,7 +1785,7 @@
                                     </div>
                                 </div>
                                 <a href="/" class="item-small-img">
-                                    <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/card-img.png">
+                                    <img src="local/assets/img/card-img.png">
                                 </a>
                                 <div class="item-price">
                                     <p class="item-price-sum">12 320</p>
@@ -1785,7 +1810,7 @@
                                     </div>
                                 </div>
                                 <a href="/" class="item-small-img">
-                                    <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/card-img.png">
+                                    <img src="local/assets/img/card-img.png">
                                 </a>
                                 <div class="item-price">
                                     <p class="item-price-sum">12 320</p>
@@ -1808,7 +1833,7 @@
                                     </div>
                                 </div>
                                 <a href="/" class="item-small-img">
-                                    <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/card-img.png">
+                                    <img src="local/assets/img/card-img.png">
                                 </a>
                                 <div class="item-price">
                                     <p class="item-price-sum">12 320</p>
@@ -1831,7 +1856,7 @@
                                     </div>
                                 </div>
                                 <a href="/" class="item-small-img">
-                                    <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/item-no-photo.svg">
+                                    <img src="local/assets/img/item-no-photo.svg">
                                 </a>
                                 <div class="item-price">
                                     <p class="item-price-sum">12 320</p>
@@ -1858,7 +1883,7 @@
                                     </div>
                                 </div>
                                 <a href="/" class="item-small-img">
-                                    <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/card-img.png">
+                                    <img src="local/assets/img/card-img.png">
                                 </a>
                                 <div class="item-price">
                                     <p class="item-price-sum">12 320</p>
@@ -1882,7 +1907,7 @@
                                     </div>
                                 </div>
                                 <a href="/" class="item-small-img">
-                                    <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/card-img.png">
+                                    <img src="local/assets/img/card-img.png">
                                 </a>
                                 <div class="item-price">
                                     <p class="item-price-sum">12 320</p>
@@ -1906,7 +1931,7 @@
                                     </div>
                                 </div>
                                 <a href="/" class="item-small-img">
-                                    <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/card-img.png">
+                                    <img src="local/assets/img/card-img.png">
                                 </a>
                                 <div class="item-price">
                                     <p class="item-price-sum">12 320</p>
@@ -1945,7 +1970,7 @@
                         </div>
                     </div>
                     <a href="/" class="item-big-img">
-                        <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/image 10.png">
+                        <img src="local/assets/img/image 10.png">
                     </a>
                     <div class="artic-fav">
                         <div class="item-small-text">
@@ -2012,7 +2037,7 @@
                             <span class="icon-return"></span>
                         </div>
                         <div class="arrow-fwd">
-                            <span class="icon-return1"></span>
+                            <span class="icon-return-copy"></span>
                         </div>
                     </div>
                 </div>
@@ -2029,7 +2054,7 @@
                                     </div>
                                 </div>
                                 <a href="/" class="item-small-img">
-                                    <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/card-img.png">
+                                    <img src="local/assets/img/card-img.png">
                                 </a>
                                 <div class="item-price">
                                     <p class="item-price-sum">12 320</p>
@@ -2054,7 +2079,7 @@
                                     </div>
                                 </div>
                                 <a href="/" class="item-small-img">
-                                    <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/card-img.png">
+                                    <img src="local/assets/img/card-img.png">
                                 </a>
                                 <div class="item-price">
                                     <p class="item-price-sum">12 320</p>
@@ -2079,7 +2104,7 @@
                                     </div>
                                 </div>
                                 <a href="/" class="item-small-img">
-                                    <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/card-img.png">
+                                    <img src="local/assets/img/card-img.png">
                                 </a>
                                 <div class="item-price">
                                     <p class="item-price-sum">12 320</p>
@@ -2104,7 +2129,7 @@
                                     </div>
                                 </div>
                                 <a href="/" class="item-small-img">
-                                    <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/card-img.png">
+                                    <img src="local/assets/img/card-img.png">
                                 </a>
                                 <div class="item-price">
                                     <p class="item-price-sum">12 320</p>
@@ -2129,7 +2154,7 @@
                                     </div>
                                 </div>
                                 <a href="/" class="item-small-img">
-                                    <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/card-img.png">
+                                    <img src="local/assets/img/card-img.png">
                                 </a>
                                 <div class="item-price">
                                     <p class="item-price-sum">12 320</p>
@@ -2154,7 +2179,7 @@
                                     </div>
                                 </div>
                                 <a href="/" class="item-small-img">
-                                    <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/card-img.png">
+                                    <img src="local/assets/img/card-img.png">
                                 </a>
                                 <div class="item-price">
                                     <p class="item-price-sum">12 320</p>
@@ -2192,7 +2217,7 @@
             <div class="duo-banner-block">
                 <div class="duo-banner mr20">
                     <div class="duo-banner-img">
-                        <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/gift-box.png">
+                        <img src="local/assets/img/gift-box.png">
                     </div>
                     <div class="duo-banner-text pr16">
                         <div class="banner-text white-text">
@@ -2205,7 +2230,7 @@
                 </div>
                 <div class="duo-banner purple-banner pl16">
                     <div class="duo-banner-img">
-                        <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/chairs.png">
+                        <img src="local/assets/img/chairs.png">
                     </div>
                     <div class="duo-banner-text pr16">
                         <div class="banner-text white-text mb12">
@@ -2231,7 +2256,7 @@
                         <span class="icon-return"></span>
                     </div>
                     <div class="arrow-fwd">
-                        <span class="icon-return1"></span>
+                        <span class="icon-return-copy"></span>
                     </div>
                 </div>
             </div>
@@ -2239,7 +2264,7 @@
                 <div class="tile-hor-col">
                     <div class="tile-hor">
                         <div class="duo-banner-img">
-                            <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/gift-box.png">
+                            <img src="local/assets/img/gift-box.png">
                         </div>
                         <div class="duo-banner-text pr16">
                             <div class="banner-text white-text banner-text-2">
@@ -2254,7 +2279,7 @@
                 <div class="tile-hor-col">
                     <div class="tile-hor purple-banner">
                         <div class="duo-banner-img pl16">
-                            <img src="/Users/airatvagapov/Desktop/Packs/local/assets/img/chairs.png">
+                            <img src="local/assets/img/chairs.png">
                         </div>
                         <div>
                             <div class="duo-banner-text pr16">
@@ -2504,7 +2529,7 @@
                     <div class="made-by">
                         <p class="subtext-white-12">Разработка интернет-магазина - </p>
                         <a href="https://artrockets.ru/">
-                            <img class="made-logo" src="/Users/airatvagapov/Desktop/Packs/local/assets/img/Artrockets logo.svg">
+                            <img class="made-logo" src="local/assets/img/Artrockets logo.svg">
                         </a>
                     </div>
                 </div>
@@ -2619,13 +2644,104 @@
                     <div class="made-by">
                         <p class="subtext-white-12">Разработка интернет-магазина -</p>
                         <a href="https://artrockets.ru/">
-                            <img class="made-logo" src="/Users/airatvagapov/Desktop/Packs/local/assets/img/Artrockets logo.svg">
+                            <img class="made-logo" src="local/assets/img/Artrockets logo.svg">
                         </a>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
+
+    <div class="callback-popup-fade">
+        <div class="callback-popup-body">
+            <div class="callback-popup-content">
+                <div class="callback-popup-head">
+                    <div class="black-text head-text callback-popup-tittle">
+                        Заказать звонок
+                    </div>
+                    <a class="popup-close a-blue-hover black-text">
+                        <span class="icon-close"></span>
+                    </a>
+                </div>
+
+                <div class="callback-popup-form">
+                    <form class="callback-popup-form-content" id="callback-form" method="post">
+                        
+                        <input class="form-field mb16 _req ru-text" type="text" placeholder="Имя" name="name" id="form-name">
+                        <input class="form-field mb24 _req ru-text" type="text" placeholder="Фамилия" name="surname" id="form-secname">
+                        
+                        <div class="black-text head-text callback-popup-tittle mb16">
+                            Время звонка
+                        </div>
+                        <div class="popup-flex-row mb20">
+                            <input class="form-field" type="time" placeholder="с 9:00">
+                            <span class="delimiter">:</span>
+                            <input class="form-field mr24" type="time">
+
+                            <div class="checkbox popup-flex-row">
+                                <input type="checkbox" name="agree" id="now-check">
+                                <label for="now-check" class="checkbox-label"></label>
+                                <div class="checkbox-text">Сейчас</div>
+                            </div>
+                        </div>
+
+                        <div class="checkbox popup-flex-row mb16">
+                            <input class="_req" type="checkbox" name="agree" id="confed-checkbox">
+                            <label for="confed-checkbox" class="checkbox-label" id="confed-checkbox-label"></label>
+                            <div class="checkbox-text" id="conf-checkbox-text">Ознакомлен с <a class="checkbox-link blue-txt-link">политикой конфиденциальности</a></div>
+                        </div>
+
+                        <button class="standart-btn form-submit" type="submit">Отправить заявку</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="callback-popup-success-body _success">
+            <div class="callback-popup-success-content">
+                <a class="popup-close a-blue-hover black-text">
+                    <span class="icon-close"></span>
+                </a>
+                <div class="success-header mb12">
+                    <div class="success-icon mr12">
+                        <span class="icon-success"></span>
+                    </div>
+                    <div class="success-header-text head-text">Ваша заявка отправлена</div>
+                </div>
+
+                <div class="success-text text-gray-14 mb30">
+                    Ваша запрос был успешно отправлен! Наш менеджер свяжется с Вами в ближайшее время
+                </div>
+
+                <a class="success-close-btn">
+                    Закрыть
+                </a>
+            </div>
+        </div>
+
+        <div class="callback-popup-success-body _error">
+            <div class="callback-popup-success-content">
+                <a class="popup-close a-blue-hover black-text">
+                    <span class="icon-close"></span>
+                </a>
+                <div class="success-header mb12">
+                    <div class="success-error mr12">
+                        <span class="icon-error"></span>
+                    </div>
+                    <div class="success-header-text head-text">Произошла ошибка</div>
+                </div>
+
+                <div class="success-text text-gray-14 mb30">
+                    Мы в курсе проблемы и уже решаем ее.
+                </div>
+
+                <a class="success-close-btn">
+                    Закрыть
+                </a>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
