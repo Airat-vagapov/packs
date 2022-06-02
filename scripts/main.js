@@ -21,14 +21,38 @@ $(document).ready(function () {
 		$('.menu_drop_container').stop().fadeOut(200);
 	});
 
+	// Слайдер баннера
+	let owl = $('.owl-carousel'); 
+	owl.owlCarousel({
+		loop: true,
+		items: 1,
+	});
+	let fwdBanner = $('.banner-left').find('.arrow-fwd')
+	let prevBanner = $('.banner-left').find('.arrow-prev')
+	
+	fwdBanner.click(function () {
+		owl.trigger('next.owl.carousel', (700));
+	});
+	prevBanner.click(function () {
+		owl.trigger('prev.owl.carousel', (700));
+	});
+
 	// Открытие заказать звонок
 	$(document).on('click', '.button_callback', function() {
-		$('.callback-popup-fade').fadeIn(200);
+		$('.callback-popup').fadeIn(200);
 		$('.callback-popup-success-body').fadeOut(200);
-		$('.callback-popup-body').fadeIn(200);
+		$('.popup-body').fadeIn(200);
 		
 		$('body').addClass('popup-active');
 	})
+
+	// Закрытие попап при клике вне него
+	$(document).mouseup(function (e) {
+		var container = $(".popup-body");
+		if (container.has(e.target).length === 0){
+			$('.popup-fade').fadeOut(200);
+		}
+	});
 
 	// Настройка чекбокса
 	$('.checkbox').click(function() {
@@ -41,14 +65,31 @@ $(document).ready(function () {
 		}
 	});
 
+	// Настройка радио кнопки 
+	$('.radio-btn').click(function () {
+		let radioBtn = $(this).find('#radio-btn')
+		
+		if(!radioBtn.is(':checked')){
+			radioBtn.attr('checked', 'checked')
+			$('.radio-btn-group').find('.radio-btn').find('#radio-btn').not(radioBtn).removeAttr('checked')
+		} else {
+			radioBtn.removeAttr('checked')
+			$('.radio-btn-group').find('.radio-btn').find('#radio-btn').not(radioBtn).attr('checked', 'checked')
+			// $(this).siblings().prop('checked', false);
+		}
+
+		
+		
+	})
+
 	// Закрытие заказать звонок и его success
 	$(document).on('click', '.popup-close', function() {
-		$('.callback-popup-fade').fadeOut(200);
+		$('.popup-fade').fadeOut(200);
 		$('body').removeClass('popup-active');
 	})
 
 	$(document).on('click', '.success-close-btn', function() {
-		$('.callback-popup-fade').fadeOut(200);
+		$('.popup-fade').fadeOut(200);
 		$('body').removeClass('popup-active');
 	})
 
@@ -118,13 +159,13 @@ $(document).ready(function () {
 			});
 			
 			result++;
-			// $('.callback-popup-body').fadeOut(200);
+			// $('.popup-body').fadeOut(200);
 			// $('.callback-popup-success-body').fadeIn(200);
 			// document.getElementById('callback-form').reset();
 		}
 
 		if (result == 1) {
-			$('.callback-popup-body').fadeOut(200);
+			$('.popup-body').fadeOut(200);
 			$('._success').fadeIn(200);
 			document.getElementById('callback-form').reset();
 		} else {
@@ -162,24 +203,45 @@ $(document).ready(function () {
 		$("#form-secname").val(r);
 		});
 
-		// Слайдер баннера
-		let owl = $('.owl-carousel'); 
-		owl.owlCarousel({
-			loop: true,
-			items: 1,
-		});
-		let fwdBanner = $('.banner-left').find('.arrow-fwd')
-		let prevBanner = $('.banner-left').find('.arrow-prev')
+
+	// ПОПАП ВХОДА/РЕГИСТРАЦИИ
+
+	$(document).on('click', '#login-btn', function() {
+		$('.login-popup').fadeIn(200);
+		let tabLine = $('.items-tabs-block').find('.tabline');
+		let activeTab = $('.items-tabs').find('.tab-active');
+		setTablineSize(tabLine, activeTab);
+
+	})
+
+
+	// Логика табов в попапе входа/регистрации
+
+	$('#popup-tabs').on('click', '.items-tab:not(.tab-active)', function () {
 		
-		fwdBanner.click(function () {
-			owl.trigger('next.owl.carousel');
-		});
-		prevBanner.click(function () {
-			owl.trigger('prev.owl.carousel');
-		});
+		$(this)
+		.addClass('tab-active')
+		.siblings().removeClass('tab-active');
+
+		let activeTab = $('.items-tabs').find('.tab-active')
+		let tabLine = $('.items-tabs-block').find('.tabline');
+		setTablineSize(tabLine, activeTab);
+
+		let tabContents = $(this).closest('.login-popup-content').find('.tab-content');
+		let tabContentSelect = tabContents.eq($(this).index());
+		tabContents.removeClass('active').hide();
+		tabContentSelect.fadeIn(200).addClass('active');
+	});
+
+	function setTablineSize(tabLine, activeTab) {
+		let tabLineLeft = activeTab.position().left;
+		let tabLineWidth = activeTab.width();
+		tabLine.width(tabLineWidth).animate({left: tabLineLeft}, 200);
+	};
+
+	// Переключение формы логина по радио кнопкам
+
 	
-		
-		
 
 });	
 
