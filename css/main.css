@@ -11,6 +11,7 @@ a, body, li, ul {
 
 .active {
 	display: block;
+	opacity: 1;
 }
 
 .popup-active {
@@ -83,11 +84,17 @@ a:hover {
 
 .a-blue-hover:hover {
 	color: #3B52F5;
+	-webkit-transition: all .4s ease-in;
+	-o-transition: all .4s ease-in;
+	transition: all .4s ease-in;
 }
 
 .blue-txt-link {
 	color: #3B52F5;
 	white-space: normal;
+	-webkit-transition: all .4s ease-in;
+	-o-transition: all .4s ease-in;
+	transition: all .4s ease-in;
 }
 
 .blue-txt-link:hover {

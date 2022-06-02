@@ -430,10 +430,12 @@
 .arrow-prev {
     margin-right: 12px;
     color: #D6D6D6;
+    cursor: pointer;
 }
 
 .arrow-fwd {
     color: #D6D6D6;
+    cursor: pointer;
 }
 
 .arrow-prev>span {
@@ -448,11 +450,17 @@
 
 .arrow-prev:hover {
     color: #3B52F5;
+    -webkit-transition: all .4s ease-in;
+	-o-transition: all .4s ease-in;
+	transition: all .4s ease-in;
 }
 
 
 .arrow-fwd:hover {
     color: #3B52F5;
+    -webkit-transition: all .4s ease-in;
+	-o-transition: all .4s ease-in;
+	transition: all .4s ease-in;
 }
 
 .banner-text {
@@ -506,6 +514,7 @@
     text-align: center;
     display: inline-block;
     border-radius: 2px;
+    cursor: pointer;
 
 }
 
@@ -606,11 +615,12 @@
 
 .items-tabs-block {
     margin-bottom: 24px;
+    position: relative;
 }
 
 .items-tabs {
     display: inline-flex;
-    margin-bottom: 24px;
+    
 }
 
 .tab-line {
@@ -620,7 +630,31 @@
 
 .items-tab {
     margin-right: 40px;
+    padding-bottom: 24px;
+    position: relative;
+    cursor: pointer;
 }
+
+.tabline {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #3B52F5;
+    position: absolute;
+    bottom: -1px;
+}
+
+.items-tab:hover {
+    color: #000;
+    -webkit-transition: all .4s ease-in;
+	-o-transition: all .4s ease-in;
+	transition: all .4s ease-in;
+}
+
+.tab-active {
+    color: #000;
+}
+
 
 
 /*Карточка товара*/
@@ -940,10 +974,16 @@
 
 .standart-btn:hover {
     opacity: 0.8;
+    -webkit-transition: all .4s ease-in;
+	-o-transition: all .4s ease-in;
+	transition: all .4s ease-in;
 }
 
 .standart-btn:hover .a-no-hover {
     color: #FFF;
+    -webkit-transition: all .4s ease-in;
+	-o-transition: all .4s ease-in;
+	transition: all .4s ease-in;
 }
 
 .item-card-buy-btn {
@@ -1415,6 +1455,12 @@ footer {
     justify-content: space-between;
 }
 
+.flex-row-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .flex-row-wrap {
     display: flex;
     flex-wrap: wrap;
@@ -1520,7 +1566,7 @@ footer {
 
 /* Попап обратного звонка */
 
-.callback-popup-fade {
+.popup-fade {
     display: none;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.8);
@@ -1532,7 +1578,7 @@ footer {
     
 }
 
-.callback-popup-body {
+.popup-body {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1575,6 +1621,15 @@ footer {
     border: 1px solid #DDDDDD;
     /* height: 45px; */
     padding: 14px 16px;
+    border: 1px solid #DDDDDD;
+    border-radius: 2px;
+}
+
+.form-field:hover {
+    border-color: #3B52F5;
+    -webkit-transition: all .4s ease-in;
+	-o-transition: all .4s ease-in;
+	transition: all .4s ease-in;
 }
 
 .delimiter {
@@ -1611,10 +1666,16 @@ footer {
 
 .checkbox:hover .checkbox-text {
     color: #000;
+    -webkit-transition: all .4s ease-in;
+	-o-transition: all .4s ease-in;
+	transition: all .4s ease-in;
 }
 
 .checkbox:hover .checkbox-label {
     background-color: #3B52F5;
+    -webkit-transition: all .4s ease-in;
+	-o-transition: all .4s ease-in;
+	transition: all .4s ease-in;
 }
 
 .checkbox input {
@@ -1666,7 +1727,7 @@ footer {
 
 }
 
-.callback-popup-success-content {
+.callback-popup-success-content, .login-popup-content {
     background-color: #fff;
     padding: 24px;
     position: relative;
@@ -1692,6 +1753,104 @@ footer {
     color: #3B52F5;
 }
 
+/* Попап входа и регистрации */
 
+.login-popup {
+    display: none;
+}
 
+.login-popup-content {
+    display: block;
+    padding: 0;
+}
 
+.tabs-block {
+    padding:  24px 24px 0 24px;
+    border: 1px solid #DDDDDD;
+}
+
+.login-popup-login-tab {
+    display: block;
+    padding: 24px;
+}
+
+.login-popup-reg-tab {
+    padding: 24px;
+}
+
+.radio-btn {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    
+}
+
+.radio-btn input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.radio-btn label {
+    margin-right: 8px;
+    height: 16px;
+    width: 16px;
+    background-color: #EEEEF2;
+    flex-grow: 0;
+    flex-shrink: 0;
+    
+    
+    border-radius: 100%;
+    cursor: pointer;
+    position: relative;
+}
+
+.radio-btn:hover .radio-btn-label {
+    border: 0.5px solid #3B52F5;
+    -webkit-transition: all .2s ease-in;
+	-o-transition: all .2s ease-in;
+	transition: all .2s ease-in;
+}
+
+.radio-btn:hover .radio-text {
+    color: #000;
+    -webkit-transition: all .2s ease-in;
+	-o-transition: all .2s ease-in;
+	transition: all .2s ease-in;
+}
+
+.radio-btn input:checked~.radio-btn-label~.radio-text {
+    color: #000;
+}
+.radio-btn input:checked~.radio-btn-label {
+    background-color: #3B52F5;
+    -webkit-transition: all .2s ease-in;
+	-o-transition: all .2s ease-in;
+	transition: all .2s ease-in;
+}
+.radio-btn input:checked~.radio-btn-label::before {
+    content: "\e95d";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'icomoon';
+    color: #fff;
+    font-size: 6px;
+    -webkit-transition: all .2s ease-in;
+	-o-transition: all .2s ease-in;
+	transition: all .2s ease-in;
+}
+
+.form-btn-group {
+    width: 100%;
+    justify-content: start;
+}
+
+.login-popup-reg-tab {
+    display: none;
+}
+
+.login-popup-login-tab {
+    display: none;
+}

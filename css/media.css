@@ -547,6 +547,10 @@
 		text-align: center;
 	}
 
+	.form-btn {
+		width: auto;
+	}
+
 	.txt-center {
 		display: flex;
 		justify-content: center;

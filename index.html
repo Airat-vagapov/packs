@@ -110,7 +110,7 @@
                     </div>
                     <!-- Правое меню -->
                     <div class="header_bottom-right">
-                        <a href="/" class="head-nav-btn a-red-hover">
+                        <a class="head-nav-btn a-red-hover" id="login-btn">
                             <span class="icon-avatar icon-head-menu-nav"></span>
                             <p class="head-nav-btn-text">Мой профиль</p>
                         </a>
@@ -396,12 +396,15 @@
                 <div class="items-tabs">
                     <div class="items-tab">
                         Новинки
+                        <div class="tabline"></div>
                     </div>
                     <div class="items-tab">
                         Популярные товары
+                        <div class="tabline"></div>
                     </div>
                     <div class="items-tab">
                         Распродажа
+                        <div class="tabline"></div>
                     </div>
                 </div>
                 <div class="tab-line">
@@ -2690,8 +2693,8 @@
         </div>
     </footer>
 
-    <div class="callback-popup-fade">
-        <div class="callback-popup-body">
+    <div class="popup-fade callback-popup">
+        <div class="popup-body">
             <div class="callback-popup-content">
                 <div class="callback-popup-head">
                     <div class="black-text head-text callback-popup-tittle">
@@ -2724,7 +2727,7 @@
                         </div>
 
                         <div class="checkbox popup-flex-row mb16">
-                            <input class="_req" type="checkbox" name="agree" id="confed-checkbox">
+                            <input type="checkbox" name="agree" id="confed-checkbox">
                             <label for="confed-checkbox" class="checkbox-label" id="confed-checkbox-label"></label>
                             <div class="checkbox-text" id="conf-checkbox-text">Ознакомлен с <a class="checkbox-link blue-txt-link">политикой конфиденциальности</a></div>
                         </div>
@@ -2780,11 +2783,86 @@
         </div>
     </div>
 
+    <div class="popup-fade login-popup">
+        <div class="popup-body">
+            <div class="login-popup-content">
+
+                <a class="popup-close a-blue-hover black-text">
+                    <span class="icon-close"></span>
+                </a>
+
+                <div class="tabs-block">
+                    <div class="items-tabs-block no-m">
+                        <div class="items-tabs" id="popup-tabs">
+                            <div class="items-tab tab-active" id="tab-1">
+                                Вход
+                            <!-- <div class="tabline active"></div>     -->
+                            </div>
+
+                            <div class="items-tab">
+                                Регистрация
+                                
+                            </div>
+                            <!-- <div class="tabline active" ></div> -->
+                            
+                        </div>
+                        <div class="tabline" ></div>
+                    </div>
+                </div>
+                <div class="login-popup-login-tab tab-content active">
+                    <form>    
+                        <div class="black-text head-text mb24">Войти через</div>
+                        <div class="radio-btn-group mb20">
+                            <div class="radio-btn mr24">
+                                <input class="radio-btn-input" name="phone" type="radio" id="radio-btn" checked="checked">
+                                <label class="radio-btn-label" for="radio-btn"></label>
+                                <p class="subtext-gray-12 radio-text">Телефон</p>
+                            </div>
+                            <div class="radio-btn">
+                                <input class="radio-btn-input" name="E-mail" type="radio" id="radio-btn">
+                                <label class="radio-btn-label" for="radio-btn"></label>
+                                <p class="subtext-gray-12 radio-text">E-mail</p>
+                            </div>
+                        </div>
+                    
+
+                        <input class="form-field mb16 _req" type="text" placeholder="Телефон" name="phone" id="form-name">
+                        <input class="form-field mb24 _req" type="text" placeholder="Пароль" name="pswrd" id="form-secname">
+
+                        <div class="flex-row-center form-btn-group">
+                            <button class="standart-btn form-btn form-submit mr24" type="submit">Войти</button>
+                            <a class="foot-tex no-mb a-blue-hover">Забыли пароль?</a>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="login-popup-reg-tab tab-content">
+                    <form >    
+                        <input class="form-field mb16 _req" type="text" placeholder="Телефон" name="phone" id="form-name">
+                        <input class="form-field mb16 _req" type="text" placeholder="Пароль" name="pswrd" id="form-psw">
+                        <input class="form-field mb24 _req" type="text" placeholder="Подтвердите пароль" name="pswrd-confirm" id="form-psw">
+                        
+                        <div class="checkbox popup-flex-row mb16">
+                            <input type="checkbox" name="agree" id="confed-checkbox">
+                            <label for="confed-checkbox" class="checkbox-label" id="confed-checkbox-label"></label>
+                            <div class="checkbox-text" id="conf-checkbox-text">Ознакомлен с <a class="checkbox-link blue-txt-link">политикой конфиденциальности</a></div>
+                        </div>
+
+                        <div class="flex-row-center form-btn-group">
+                            <button class="standart-btn form-btn form-submit mr24" type="submit">Зарегистрироваться</button>
+                            <!-- <a class="foot-tex no-mb a-blue-hover">Забыли пароль?</a> -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+    <script src="scripts/vendor/jquery.json.min.js"></script>
+    <script src="scripts/vendor/owlcarousel/owl.carousel.min.js"></script>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script type="text/javascript" src="scripts/main.js"></script>
-<script src="scripts/vendor/jquery.json.min.js"></script>
-<script src="scripts/vendor/owlcarousel/owl.carousel.min.js"></script>
-<script src="scripts/vendor/owlcarousel/owl.carousel.js"></script>
+
 
 </html>

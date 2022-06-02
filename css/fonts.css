@@ -40,6 +40,12 @@
   line-height: 16px;
 }
 
+.subtext-gray-12 {
+  color: #939393;
+  font-size: 12px;
+  line-height: 16px;
+}
+
 .subtext-white-12 {
   color: #FFF;
   font-size: 12px;
@@ -114,7 +120,10 @@
 }
 
 
-
+.icon-radio-check:before {
+  content: "\e95d";
+  color: #fff;
+}
 .icon-error:before {
   content: "\e95c";
   color: #d91515;
@@ -125,6 +134,7 @@
 }
 .icon-return-copy:before {
   content: "\e949";
+  
 }
 .icon-valentines-heart-1:before {
   content: "\e948";
