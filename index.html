@@ -2810,56 +2810,64 @@
                     </div>
                 </div>
                 <div class="login-popup-login-tab tab-content active">
-                    <form>    
-                        <div class="black-text head-text mb24">Войти через</div>
-                        <div class="radio-btn-group mb20">
-                            <div class="radio-btn mr24">
-                                <input class="radio-btn-input" name="phone" type="radio" id="radio-btn" checked="checked">
-                                <label class="radio-btn-label" for="radio-btn"></label>
-                                <p class="subtext-gray-12 radio-text">Телефон</p>
-                            </div>
-                            <div class="radio-btn">
-                                <input class="radio-btn-input" name="E-mail" type="radio" id="radio-btn">
-                                <label class="radio-btn-label" for="radio-btn"></label>
-                                <p class="subtext-gray-12 radio-text">E-mail</p>
-                            </div>
+                    
+                    <div class="black-text head-text mb24">Войти через</div>
+                    <div class="radio-btn-group ">
+                        <div class="radio-btn mr24">
+                            <input class="radio-btn-input" name="phone" type="radio" id="radio-btn" checked="checked">
+                            <label class="radio-btn-label" for="radio-btn"></label>
+                            <p class="subtext-gray-12 radio-text">Телефон</p>
+                        </div>
+                        <div class="radio-btn mb20">
+                            <input class="radio-btn-input" name="E-mail" type="radio" id="radio-btn">
+                            <label class="radio-btn-label" for="radio-btn"></label>
+                            <p class="subtext-gray-12 radio-text">E-mail</p>
                         </div>
                     
+                    
+                        <form class="popup-form active" id="phone-login">    
+                            <input class="form-field mb16 _req" type="text" placeholder="Телефон" name="phone" id="phone">
+                            <input class="form-field mb24 _req" type="text" placeholder="Пароль" name="pswrd" id="pswrd>
+                            
+                            <div class="flex-row-center form-btn-group">
+                                <button class="standart-btn form-btn form-submit mr24" type="submit">Войти</button>
+                                <a class="foot-tex no-mb a-blue-hover">Забыли пароль?</a>
+                            </div>
+                        </form>
+                        <form class="popup-form" id="email-login">    
+                            <input class="form-field mb16 _req" type="text" placeholder="E-mail" name="E-mail" id="">
+                            <input class="form-field mb24 _req" type="text" placeholder="Пароль" name="pswrd" id="">
+                            
+                            <div class="flex-row-center form-btn-group">
+                                <button class="standart-btn form-btn form-submit mr24" type="submit">Войти</button>
+                                <a class="foot-tex no-mb a-blue-hover">Забыли пароль?</a>
+                            </div>
+                        </form>
+                    </div>                
+            </div>
+            <div class="login-popup-reg-tab tab-content">
+                <form class="registration-form">    
+                    <input class="form-field mb16 _req" type="text" placeholder="Телефон" name="phone" id="form-name">
+                    <input class="form-field mb16 _req" type="text" placeholder="Пароль" name="pswrd" id="form-psw">
+                    <input class="form-field mb24 _req" type="text" placeholder="Подтвердите пароль" name="pswrd-confirm" id="form-psw">
+                    
+                    <div class="checkbox popup-flex-row mb16">
+                        <input type="checkbox" name="agree" id="confed-checkbox">
+                        <label for="confed-checkbox" class="checkbox-label" id="confed-checkbox-label"></label>
+                        <div class="checkbox-text" id="conf-checkbox-text">Ознакомлен с <a class="checkbox-link blue-txt-link">политикой конфиденциальности</a></div>
+                    </div>
 
-                        <input class="form-field mb16 _req" type="text" placeholder="Телефон" name="phone" id="form-name">
-                        <input class="form-field mb24 _req" type="text" placeholder="Пароль" name="pswrd" id="form-secname">
-
-                        <div class="flex-row-center form-btn-group">
-                            <button class="standart-btn form-btn form-submit mr24" type="submit">Войти</button>
-                            <a class="foot-tex no-mb a-blue-hover">Забыли пароль?</a>
-                        </div>
-                    </form>
-                </div>
-
-                <div class="login-popup-reg-tab tab-content">
-                    <form >    
-                        <input class="form-field mb16 _req" type="text" placeholder="Телефон" name="phone" id="form-name">
-                        <input class="form-field mb16 _req" type="text" placeholder="Пароль" name="pswrd" id="form-psw">
-                        <input class="form-field mb24 _req" type="text" placeholder="Подтвердите пароль" name="pswrd-confirm" id="form-psw">
-                        
-                        <div class="checkbox popup-flex-row mb16">
-                            <input type="checkbox" name="agree" id="confed-checkbox">
-                            <label for="confed-checkbox" class="checkbox-label" id="confed-checkbox-label"></label>
-                            <div class="checkbox-text" id="conf-checkbox-text">Ознакомлен с <a class="checkbox-link blue-txt-link">политикой конфиденциальности</a></div>
-                        </div>
-
-                        <div class="flex-row-center form-btn-group">
-                            <button class="standart-btn form-btn form-submit mr24" type="submit">Зарегистрироваться</button>
-                            <!-- <a class="foot-tex no-mb a-blue-hover">Забыли пароль?</a> -->
-                        </div>
-                    </form>
-                </div>
+                    <div class="flex-row-center form-btn-group">
+                        <button class="standart-btn form-btn form-submit mr24" type="submit">Зарегистрироваться</button>
+                        <!-- <a class="foot-tex no-mb a-blue-hover">Забыли пароль?</a> -->
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="text/javascript" src="scripts/main.js"></script>
+    <script type="text/javascript" src="scripts/main2.js"></script>
     <script src="scripts/vendor/jquery.json.min.js"></script>
     <script src="scripts/vendor/owlcarousel/owl.carousel.min.js"></script>
 </body>
