@@ -1,7 +1,9 @@
+
+
 $(document).ready(function () {
 	
-	// Открытие подтверждения города
-	$('.city-submit-window').fadeIn(500);
+	// // Открытие подтверждения города
+	// $('.city-submit-window').fadeIn(500);
 
 	//Подтверждение города закрытие
 	$(document).on('click', '.submit-close', function () {
@@ -67,19 +69,31 @@ $(document).ready(function () {
 
 	// Настройка радио кнопки 
 	$('.radio-btn').click(function () {
-		let radioBtn = $(this).find('#radio-btn')
+		let radioBtn = $(this).find('#radio-btn');
 		
 		if(!radioBtn.is(':checked')){
-			radioBtn.attr('checked', 'checked')
-			$('.radio-btn-group').find('.radio-btn').find('#radio-btn').not(radioBtn).removeAttr('checked')
+			radioBtn.attr('checked', 'checked');
+			$('.radio-btn-group').find('.radio-btn').find('#radio-btn').not(radioBtn).removeAttr('checked');
 		} else {
 			radioBtn.removeAttr('checked')
-			$('.radio-btn-group').find('.radio-btn').find('#radio-btn').not(radioBtn).attr('checked', 'checked')
-			// $(this).siblings().prop('checked', false);
-		}
+			$('.radio-btn-group').find('.radio-btn').find('#radio-btn').not(radioBtn).attr('checked', 'checked');
 
+	
+		};
+
+
+		// Переключение формы логина по радио кнопкам
+		let radioBtnCheck = $('.radio-btn-group').find('.radio-btn').find('#radio-btn[checked=checked]');
+		console.log(radioBtnCheck)
+
+		let radioBtnIndex = radioBtnCheck.closest('.radio-btn').index();
+		let radioBtnContent = $(this).closest('.radio-btn-group').find('.popup-form');
+		let radioBtnContentSelect = radioBtnContent.eq(radioBtnIndex);
+		radioBtnContent.removeClass('active').hide();
+		radioBtnContentSelect.fadeIn(200).addClass('active');
 		
-		
+
+
 	})
 
 	// Закрытие заказать звонок и его success
@@ -94,23 +108,16 @@ $(document).ready(function () {
 	})
 
 	// Отправка формы Заказать звонок
-	// $(document).on('submit', '#callback-form', sendForm);
-	$('#callback-form').submit(sendForm);
+	$('#callback-form').submit(sendCallbackForm);
 
 	// Валидация формы
-	function formValidate () {
-
-			let name = $(document).find('#form-name');
-			let nameVal = name.val();
-
-			let secName = $(document).find('#form-secname');
-			let secNameVal = $(document).find('#form-secname').val();
-
-			let confCheckboxStatus = $(document).find('#confed-checkbox').prop('checked');
-
+	function formValidate (name, secName, phone) {
 			let errorCount = 0
 			
-			
+			let nameVal = name.val();
+			let secNameVal = secName.val();
+			let phoneVal = phone.val()
+			let pswrdVal = pswrd.val();
 			
 			// Проверка имени на пустоту
 			if (nameVal.length < 1) {
@@ -120,9 +127,6 @@ $(document).ready(function () {
 				name.removeClass('field-error');
 			};
 			
-			
-			
-
 			// Проверка фамилии на пустоту
 			if (secNameVal.length < 1) {
 				secName.addClass('field-error');
@@ -141,13 +145,32 @@ $(document).ready(function () {
 				$('#confed-checkbox-label').removeClass('checkbox-error');
 			};
 
+			// Проверка номера телефона
+			if (phoneVal < 1) {
+				phone.addClass('field-error');
+				errorCount++;
+			} else {
+				phone.removeClass('field-error');
+			}
+			// Проверка пароля
+			if (pswrdVal < 1) {
+				pswrd.addClass('field-error');
+				errorCount++;
+			} else {
+				pswrd.removeClass('field-error');
+			}
+
 			return errorCount;
 	} 
 
 	// // Отправка формы заказать звонок
-	function sendForm (e){
+	function sendCallbackForm (e){
 		e.preventDefault();
-		let error = formValidate();
+		let name = $('#callback-form').find('#form-name');
+		let secName = $('#callback-form').find('#form-secname');
+		let confCheckboxStatus = $('#callback-form').find('#confed-checkbox').prop('checked');
+
+		let error = formValidate(name, secName, confCheckboxStatus);
 		let result = 0;
 		console.log(error);
 		// Проверка счетчика ошибок
@@ -157,11 +180,7 @@ $(document).ready(function () {
 				url: "some",
 				data: $('#callback-form').serialize()
 			});
-			
 			result++;
-			// $('.popup-body').fadeOut(200);
-			// $('.callback-popup-success-body').fadeIn(200);
-			// document.getElementById('callback-form').reset();
 		}
 
 		if (result == 1) {
@@ -239,8 +258,38 @@ $(document).ready(function () {
 		tabLine.width(tabLineWidth).animate({left: tabLineLeft}, 200);
 	};
 
-	// Переключение формы логина по радио кнопкам
+	$('#phone-login').submit(phoneLogin);
 
+	function phoneLogin (e){
+		e.preventDefault();
+		let phone = $('#phone-login').find('#phone');
+		let pswrd = $('#phone-login').find('#pswrd');
+
+		let error = formValidate(phone, pswrd);
+		let result = 0;
+		console.log(error);
+		// Проверка счетчика ошибок
+		if (error == 0) {
+			let response = $.ajax({
+				method: "POST",
+				url: "phoheLoginScript",
+				data: $('#phone-login-data').serialize()
+			});
+			
+			result++;
+			
+		}
+
+		if (result == 1) {
+			$('.popup-body').fadeOut(200);
+			$('._success').fadeIn(200);
+			document.getElementById('callback-form').reset();
+		} else {
+			$('._error').fadeIn(200);
+		};
+	};
+
+	
 	
 
 });	
