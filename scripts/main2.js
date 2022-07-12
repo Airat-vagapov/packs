@@ -15,7 +15,8 @@ let citySubmitPopup = document.querySelector(".city-submit-window");
 document.addEventListener("DOMContentLoaded", activate(citySubmitPopup));
 
 // Закрытие окна подтверждения города
-let closeBtn = citySubmitPopup.querySelector(".submit-close");
+let closeBtn = document.querySelector(".submit-close");
+closeBtn.addEventListener("click", () => {
+  disable(citySubmitPopup);
+});
 
-closeBtn.addEventListener("click", disable(closeBtn.parentNode.parentElement));
-console.log(closeBtn.parentNode.parentElement)
