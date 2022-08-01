@@ -15,6 +15,17 @@ a, body, li, ul {
 	-webkit-transition: all .4s ease-in;
 	-o-transition: all .4s ease-in;
 	transition: all .4s ease-in;
+	animation: fadeIn 300ms ease-in 0s 1 normal none;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
 }
 
 .popup-active {
