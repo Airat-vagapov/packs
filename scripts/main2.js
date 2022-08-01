@@ -34,12 +34,12 @@ function openHideMenu(menuPoint) {
 
         item.addEventListener('mouseenter', (e) => {
             if (item.classList.contains('drop-active')) {
-                dropMenu.classList.add(activeClassName);
+                activate(dropMenu);
             }
         });
 
         item.addEventListener('mouseleave', () => {
-            dropMenu.classList.remove(activeClassName);
+            disable(dropMenu);
         });
     });
 }
