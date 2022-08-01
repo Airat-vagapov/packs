@@ -15,7 +15,7 @@
 
 
 .header_top {
-    padding: 8px 0;
+    /* padding: 8px 0; */
     border-bottom: 1px solid #DDDDDD;
 }
 
@@ -37,6 +37,10 @@
     align-items: center;
     font-size: 14px;
     line-height: 14px;
+}
+
+.menu_left>div {
+    padding: 8px 0;
 }
 
 
