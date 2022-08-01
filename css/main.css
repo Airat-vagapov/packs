@@ -11,10 +11,14 @@ a, body, li, ul {
 
 .active {
 	display: flex;
-	opacity: 1;
-	-webkit-transition: all .4s ease-in;
+	/* opacity: 1; */
+	/* -webkit-transition: all .4s ease-in;
 	-o-transition: all .4s ease-in;
-	transition: all .4s ease-in;
+	transition: all .4s ease-in; */
+	
+}
+
+.fadeIn {
 	animation: fadeIn 300ms ease-in 0s 1 normal none;
 }
 
@@ -25,6 +29,20 @@ a, body, li, ul {
 
 	100% {
 		opacity: 1;
+	}
+}
+
+.fadeOut {
+	animation: fadeOut 300ms ease-out 0s 1 normal none;
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
 	}
 }
 

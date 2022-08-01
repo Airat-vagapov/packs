@@ -11,14 +11,34 @@ function disable(elem) {
     elem.classList.remove(activeClassName);
 }
 
+function removeClass(elem, className) {
+    elem.classList.remove(className);
+}
+
+function fadeIn(elem) {
+    elem.classList.add('fadeIn');
+    setTimeout(activate, 100, elem);
+    let className = 'fadeIn';
+    setTimeout(removeClass, 400, elem, className);
+}
+
+function fadeOut(elem) {
+    let className = 'fadeOut';
+    elem.classList.add(className);
+    setTimeout(disable, 300, elem);
+    setTimeout(removeClass, 300, elem, className);
+}
+
 // Открытие подтверждения города
 let citySubmitPopup = document.querySelector('.city-submit-window');
-document.addEventListener('DOMContentLoaded', activate(citySubmitPopup));
+document.addEventListener('DOMContentLoaded', () => {
+    fadeIn(citySubmitPopup)
+});
 
 // Закрытие окна подтверждения города
 let closeBtn = citySubmitPopup.querySelector('.submit-close');
 closeBtn.addEventListener('click', () => {
-    disable(citySubmitPopup);
+    fadeOut(citySubmitPopup);
 });
 
 // Выбор раздела в верхней шапке
@@ -34,12 +54,12 @@ function openHideMenu(menuPoint) {
 
         item.addEventListener('mouseenter', (e) => {
             if (item.classList.contains('drop-active')) {
-                activate(dropMenu);
+                fadeIn(dropMenu);
             }
         });
 
         item.addEventListener('mouseleave', () => {
-            disable(dropMenu);
+            fadeOut(dropMenu);
         });
     });
 }
