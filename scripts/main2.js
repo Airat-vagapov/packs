@@ -32,7 +32,7 @@ function fadeOut(elem) {
 // Открытие подтверждения города
 let citySubmitPopup = document.querySelector('.city-submit-window');
 document.addEventListener('DOMContentLoaded', () => {
-    fadeIn(citySubmitPopup)
+    fadeIn(citySubmitPopup);
 });
 
 // Закрытие окна подтверждения города
@@ -48,8 +48,8 @@ const headLeftMenu = document.querySelector('.menu_left'),
 
 // Всплывающие подменю в шапке сайта
 openHideMenu(menuPoint);
-function openHideMenu(menuPoint) {
-    menuPoint.forEach((item) => {
+function openHideMenu(elem) {
+    elem.forEach((item) => {
         const dropMenu = item.querySelector('.menu_drop_container');
 
         item.addEventListener('mouseenter', (e) => {
@@ -60,6 +60,25 @@ function openHideMenu(menuPoint) {
 
         item.addEventListener('mouseleave', () => {
             fadeOut(dropMenu);
+        });
+    });
+}
+
+// Открытие попап окна
+const callbackPopup = document.querySelector('.callback-popup');
+const popupBtns = document.querySelectorAll('.button_callback');
+
+openPopup(callbackPopup, popupBtns);
+function openPopup(popup, btns) {
+    // Находим кнопки открытия попапа.
+    // Вешаем событие на каждую кнопку
+    // Проверяем на попап и открываем
+    btns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            if (popup.classList.contains('popup-fade') != true) {
+                return;
+            }
+            fadeIn(popup);
         });
     });
 }
