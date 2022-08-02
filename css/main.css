@@ -18,7 +18,7 @@ a, body, li, ul {
 	
 }
 
-.fadeIn {
+/* .fadeIn {
 	animation: fadeIn 300ms ease-in 0s 1 normal none;
 }
 
@@ -30,10 +30,15 @@ a, body, li, ul {
 	100% {
 		opacity: 1;
 	}
+} */
+
+.fadeIn {
+	opacity: 1;
+
 }
 
 .fadeOut {
-	animation: fadeOut 300ms ease-out 0s 1 normal none;
+	animation: fadeOut 300ms ease-out 0s 1 normal forwards;
 }
 
 @keyframes fadeOut {
