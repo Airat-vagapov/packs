@@ -2,26 +2,26 @@
 const activeClassName = 'active',
     subMenuActiveClass = 'submenu-active';
 
-// Добавление класса active (display: block)
+// Добавление класса active (display: flex)
 function activate(elem) {
     elem.classList.add(activeClassName);
 }
-
+// Убираем класс active (display: flex)
 function disable(elem) {
     elem.classList.remove(activeClassName);
 }
-
+// Убираем класс
 function removeClass(elem, className) {
     elem.classList.remove(className);
 }
-
+// Активация элемента с анимацией Fade In
 function fadeIn(elem) {
     elem.classList.add('fadeIn');
     setTimeout(activate, 100, elem);
     let className = 'fadeIn';
     setTimeout(removeClass, 400, elem, className);
 }
-
+// Деактивация элемента с анимацией Fade Out
 function fadeOut(elem) {
     let className = 'fadeOut';
     elem.classList.add(className);
