@@ -3,9 +3,8 @@ const forms = () => {
         input = document.querySelectorAll('input');
     // Объект с описанием ошибок
     const message = {
-        loading: 'Загрузка',
-        success: document.querySelector('._success'),
-        error: document.querySelector('._error'),
+        success: document.querySelector('[data-popup-status="success"]'),
+        error: document.querySelector('[data-popup-status="error"]'),
     };
 
     // Фукнция отправки POST запроса с формы
