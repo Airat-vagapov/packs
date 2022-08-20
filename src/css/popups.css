@@ -31,9 +31,6 @@
 
 .popup-body {
     z-index: 10000;
-    display: flex;
-    padding: 0;
-    flex-direction: column;
     opacity: 1;
     background-color: #fff;
     position: relative;

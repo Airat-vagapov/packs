@@ -104,13 +104,14 @@ class Popup {
 // Попап обратного звонка
 const callbackPopup = new Popup(
     'Callback',
-    document.querySelector('div[data-popup-name="callback"'),
-    null,
-    null,
+    document.querySelector('div[data-popup-name="callback"]'),
+    document.querySelector('div[data-popup-status="success"]'),
+    document.querySelector('div[data-popup-status="error"]'),
     document.querySelectorAll('[data-action="callback__Popup__Open"]')
 );
 
 callbackPopup.openPopupByBtns(callbackPopup.name);
+console.log(callbackPopup)
 
 callbackPopup.closePopup(callbackPopup.name);
 
