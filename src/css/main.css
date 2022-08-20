@@ -1,0 +1,377 @@
+a,
+body,
+li,
+ul {
+    font-family: HelveticaNeueCyr, sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #939393;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.active {
+    opacity: 1;
+}
+
+/* .disable {
+	opacity: 0;
+	pointer-events: none;
+}  */
+
+
+
+.form-field {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #dddddd;
+    border-radius: 2px;
+}
+
+.form-field:hover {
+    border-color: #3b52f5;
+    -webkit-transition: all 0.4s ease-in;
+    -o-transition: all 0.4s ease-in;
+    transition: all 0.4s ease-in;
+}
+
+.form-field:focus {
+    border-color: #3b52f5;
+    -webkit-transition: all 0.4s ease-in;
+    -o-transition: all 0.4s ease-in;
+    transition: all 0.4s ease-in;
+}
+
+.field-error {
+    border-color: #d91515 !important;
+}
+
+.delimiter {
+    margin-right: 10px;
+    margin-left: 10px;
+    font-style: 14px;
+    line-height: 18px;
+}
+.now-check {
+    margin-left: 24px;
+    display: flex;
+}
+
+.checkbox-error {
+    border: solid 1px #d91515;
+}
+
+.text-error {
+    color: #d91515 !important;
+}
+
+.text-error a {
+    color: #d91515;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+form,
+input {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+}
+
+li,
+ul {
+    list-style: none;
+    text-decoration: none;
+}
+
+header {
+    height: 145px;
+}
+
+a:hover {
+    color: #fff;
+    -webkit-transition: all 0.4s ease-in;
+    -o-transition: all 0.4s ease-in;
+    transition: all 0.4s ease-in;
+    cursor: pointer;
+}
+.a-no-hover {
+    color: #fff;
+}
+
+.a-blue-hover:hover {
+    color: #3b52f5;
+    -webkit-transition: all 0.4s ease-in;
+    -o-transition: all 0.4s ease-in;
+    transition: all 0.4s ease-in;
+}
+
+.blue-txt-link {
+    color: #3b52f5;
+    white-space: normal;
+    -webkit-transition: all 0.4s ease-in;
+    -o-transition: all 0.4s ease-in;
+    transition: all 0.4s ease-in;
+}
+
+.blue-txt-link:hover {
+    color: #3b52f5;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.a-blue-hover-no-underline:hover {
+    color: #3b52f5;
+}
+
+.a-red-hover:hover {
+    color: #d91515;
+}
+
+.black-btn {
+    background-color: #000;
+}
+
+h2 {
+    color: #000;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+.no-m {
+    margin: 0;
+}
+
+.mr4 {
+    margin-right: 4px;
+}
+
+.mr12 {
+    margin-right: 12px;
+}
+
+.mr16 {
+    margin-right: 16px;
+}
+
+.mr20 {
+    margin-right: 20px;
+}
+
+.mr24 {
+    margin-right: 24px;
+}
+
+.mr40 {
+    margin-right: 40px;
+}
+
+.mr75 {
+    margin-right: 75px;
+}
+
+.mb4 {
+    margin-bottom: 4px;
+}
+
+.mb12 {
+    margin-bottom: 12px;
+}
+
+.mb16 {
+    margin-bottom: 16px;
+}
+
+.mb20 {
+    margin-bottom: 20px;
+}
+
+.mb24 {
+    margin-bottom: 24px;
+}
+
+.mb30 {
+    margin-bottom: 30px;
+}
+
+.mb32 {
+    margin-bottom: 32px;
+}
+
+.mb40 {
+    margin-bottom: 40px;
+}
+
+.mb42 {
+    margin-bottom: 42px;
+}
+
+.mb60 {
+    margin-bottom: 60px;
+}
+
+.no-mb {
+    margin-bottom: 0;
+}
+
+.pl16 {
+    padding-left: 16px;
+}
+
+.pr16 {
+    padding-right: 16px;
+}
+
+/* Радио кнопки */
+.radio-btn {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.radio-btn input {
+    position: absolute;
+    opacity: 0;
+}
+
+.radio-btn-label {
+    margin-right: 8px;
+    height: 16px;
+    width: 16px;
+    background-color: #eeeef2;
+    flex-grow: 0;
+    flex-shrink: 0;
+    border-radius: 100%;
+    cursor: pointer;
+    position: relative;
+}
+
+.radio-btn:hover .radio-btn-label {
+    border: 0.5px solid #3b52f5;
+    -webkit-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+.radio-btn:hover .radio-text {
+    color: #000;
+    -webkit-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+.radio-btn input:checked ~ .radio-text {
+    color: #000;
+}
+.radio-btn input:checked ~ .radio-btn-label {
+    background-color: #3b52f5;
+    -webkit-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+.radio-btn input:checked ~ .radio-btn-label::before {
+    content: '\e95d';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'icomoon';
+    color: #fff;
+    font-size: 6px;
+    -webkit-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+/* Чекбокс */
+.checkbox-text {
+    color: #939393;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.checkbox-link {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.checkbox {
+    display: inline-flex;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    position: relative;
+}
+
+.checkbox:hover .checkbox-text {
+    color: #000;
+    -webkit-transition: all 0.4s ease-in;
+    -o-transition: all 0.4s ease-in;
+    transition: all 0.4s ease-in;
+}
+
+.checkbox:hover .checkbox-label {
+    background-color: #3b52f5;
+    -webkit-transition: all 0.4s ease-in;
+    -o-transition: all 0.4s ease-in;
+    transition: all 0.4s ease-in;
+}
+
+.checkbox input {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+}
+
+.checkbox input:checked ~ .checkbox-label,
+.checkbox input:checked ~ .checkbox-text .checkbox-label {
+    background-color: #3b52f5;
+}
+
+.checkbox input:checked ~ .checkbox-label::before,
+.checkbox input:checked ~ .checkbox-text .checkbox-label::before {
+    content: '\e945';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'icomoon';
+    color: #fff;
+    font-size: 7px;
+}
+
+.checkbox-label {
+    border-radius: 2px;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    background-color: #eeeef2;
+    position: relative;
+    cursor: pointer;
+}
