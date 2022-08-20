@@ -1,1 +1,7 @@
 node_modules
+gulpfile.js
+package-lock.json
+package.json
+vscode-yarn-2.1.0.vsix
+gulp-scss-starter
+.vscode
