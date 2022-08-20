@@ -116,6 +116,3 @@ tabBlock.forEach((item) => {
     });
 });
 
-// document.addEventListener('click', (e) => {
-//     console.log(e.target);
-// })

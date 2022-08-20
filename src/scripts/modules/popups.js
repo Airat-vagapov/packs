@@ -35,10 +35,15 @@ class Popup {
                         ),
                         loginByPhone = this.popupContainer.querySelector(
                             'form[data-login="byPhone"]'
+                        ),
+                        loginByEmail = this.popupContainer.querySelector(
+                            'form[data-login="byEmail"]'
                         );
 
+                    phoneRadio.checked = true;
                     if (phoneRadio.checked) {
                         if (this.popupContainer.contains(loginByPhone)) {
+                            disable(loginByEmail);
                             activate(loginByPhone);
                         }
                     }
@@ -139,30 +144,35 @@ const loginPopup = new Popup(
 loginPopup.openPopupByBtns();
 loginPopup.closePopup();
 
-// const popupContent = profilePopup.popupContent,
-//       loginPopup = popupContent.querySelector('.login-popup-login-tab'),
-//       loginPopupRadioBtns = loginPopup
-//         .querySelector('div[name="radiobtns"]')
-//         .querySelectorAll('.radio-btn');
+// Меняем типы входа по значению радиокнопки
+const loginPopupRadioBtns =
+    loginPopup.popupContainer.querySelectorAll('.radio-btn');
+console.log(loginPopupRadioBtns);
 
-// // Меняем типы входа по значению радиокнопки
-// const switchPopupByRadio = (elem) => {
-//     const radioInput = elem.querySelector('input[type=radio]');
+const switchPopupByRadio = (elem) => {
+    const radioInput = elem.querySelector('input[type=radio]');
 
-//     if (radioInput.dataset.type == 'phone' && radioInput.checked) {
-//         disable(loginPopup.querySelector('[data-login="byEmail"]'));
-//         activate(loginPopup.querySelector('[data-login="byPhone"]'));
-//     }
-//     if (radioInput.dataset.type == 'email' && radioInput.checked) {
-//         disable(loginPopup.querySelector('[data-login="byPhone"]'));
-//         activate(loginPopup.querySelector('[data-login="byEmail"]'));
-//     }
-// };
-// loginPopupRadioBtns.forEach((item) => {
+    if (radioInput.dataset.type == 'phone' && radioInput.checked) {
+        disable(
+            loginPopup.popupContainer.querySelector('[data-login="byEmail"]')
+        );
+        activate(
+            loginPopup.popupContainer.querySelector('[data-login="byPhone"]')
+        );
+    }
+    if (radioInput.dataset.type == 'email' && radioInput.checked) {
+        disable(
+            loginPopup.popupContainer.querySelector('[data-login="byPhone"]')
+        );
+        activate(
+            loginPopup.popupContainer.querySelector('[data-login="byEmail"]')
+        );
+    }
+};
+loginPopupRadioBtns.forEach((item) => {
+    switchPopupByRadio(item);
 
-//     switchPopupByRadio(item);
-
-//     item.addEventListener('click', () => {
-//         switchPopupByRadio(item);
-//     });
-// });
+    item.addEventListener('click', () => {
+        switchPopupByRadio(item);
+    });
+});
