@@ -8,7 +8,7 @@ class Popup {
             (this.openBtns = openBtns);
     }
 
-    openPopupByBtns(name) {
+    openPopupByBtns() {
         // Находим кнопки открытия попапа.
         // Вешаем событие на каждую кнопку
         // Проверяем на попап и открываем
@@ -29,7 +29,7 @@ class Popup {
                 clearInputs(inputs);
 
                 // Активация формы логина
-                if (name == 'login') {
+                if (this.name == 'login') {
                     const phoneRadio = this.popupContainer.querySelector(
                             'input[data-type="phone"]'
                         ),
@@ -47,7 +47,7 @@ class Popup {
         });
     }
 
-    closePopup(name) {
+    closePopup() {
         const btn = document.querySelectorAll('.popup-close');
 
         // Закрытие по кнопке «закрыть»
@@ -122,10 +122,10 @@ const callbackPopup = new Popup(
     document.querySelectorAll('[data-action="callback__Popup__Open"]')
 );
 
-callbackPopup.openPopupByBtns(callbackPopup.name);
+callbackPopup.openPopupByBtns();
 console.log(callbackPopup);
 
-callbackPopup.closePopup(callbackPopup.name);
+callbackPopup.closePopup();
 
 // Попап профиля (логин и регистрация)
 const loginPopup = new Popup(
@@ -136,8 +136,8 @@ const loginPopup = new Popup(
     document.querySelectorAll('[data-action=profile__popup_open]')
 );
 
-loginPopup.openPopupByBtns(loginPopup.name);
-loginPopup.closePopup(loginPopup.name);
+loginPopup.openPopupByBtns();
+loginPopup.closePopup();
 
 // const popupContent = profilePopup.popupContent,
 //       loginPopup = popupContent.querySelector('.login-popup-login-tab'),
