@@ -170,8 +170,6 @@ const switchPopupByRadio = (elem) => {
     }
 };
 loginPopupRadioBtns.forEach((item) => {
-    switchPopupByRadio(item);
-
     item.addEventListener('click', () => {
         switchPopupByRadio(item);
     });
