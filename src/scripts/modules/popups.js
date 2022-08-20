@@ -48,15 +48,22 @@ class Popup {
     }
 
     closePopup(name) {
-        const btn = this.popupContainer.querySelectorAll('.popup-close');
-        const statusCloseBtn =
-            this.popupContainer.querySelectorAll('.success-close-btn');
+        const btn = document.querySelectorAll('.popup-close');
 
         // Закрытие по кнопке «закрыть»
         btn.forEach((btn) => {
             btn.addEventListener('click', () => {
                 disable(this.popupContainer);
 
+                // Убираем активность с формы логина
+                const loginByPhone = this.popupContainer.querySelector(
+                    'form[data-login="byPhone"]'
+                );
+                if (this.popupContainer.contains(loginByPhone)) {
+                    setTimeout(disable, 300, loginByPhone);
+                }
+
+                // Закрытие success/error
                 if (
                     this.success.classList.contains('active') ||
                     this.error.classList.contains('active')
@@ -68,35 +75,40 @@ class Popup {
         });
 
         // Закрытие по клике вне попапа
-        this.popupContainer.addEventListener('click', (e) => {
+        document.addEventListener('click', (e) => {
             const target = e.target;
-            const popupFade = this.popupContainer.querySelector('.popup-fade');
+            const popupFade = document.querySelectorAll('.popup-fade');
 
-            if(target == popupFade) {
-                disable(this.popupContainer);
-            }
+            popupFade.forEach((item) => {
+                if (target == item) {
+                    disable(item.parentElement);
+
+                    // Убираем активность с формы логина
+                    const loginByPhone = item.parentElement.querySelector(
+                        'form[data-login="byPhone"]'
+                    );
+                    if (item.parentElement.contains(loginByPhone)) {
+                        setTimeout(disable, 300, loginByPhone);
+                    }
+                }
+            });
         });
 
         // Закрытие по кнопке Esc
         document.addEventListener('keydown', (e) => {
             if (e.key == 'Escape') {
                 disable(this.popupContainer);
-            }
-        });
-
-        // Закрытие success/error по кнопке
-        statusCloseBtn.forEach((btn) => {
-            btn.addEventListener('click', () => {
-                disable(this.popupContainer);
-
-                if (
-                    this.success.classList.contains('active') ||
-                    this.error.classList.contains('active')
-                ) {
-                    disable(this.success);
-                    disable(this.error);
+                // Убираем активность с формы логина
+                const loginByPhone = this.popupContainer.querySelector(
+                    'form[data-login="byPhone"]'
+                );
+                if (this.popupContainer.contains(loginByPhone)) {
+                    setTimeout(disable, 300, loginByPhone);
                 }
-            });
+
+                disable(this.success);
+                disable(this.error);
+            }
         });
     }
 }
@@ -111,7 +123,7 @@ const callbackPopup = new Popup(
 );
 
 callbackPopup.openPopupByBtns(callbackPopup.name);
-console.log(callbackPopup)
+console.log(callbackPopup);
 
 callbackPopup.closePopup(callbackPopup.name);
 
@@ -119,8 +131,8 @@ callbackPopup.closePopup(callbackPopup.name);
 const loginPopup = new Popup(
     'login',
     document.querySelector('div[data-popup-name="login"'),
-    null,
-    null,
+    document.querySelector('div[data-popup-status="success"]'),
+    document.querySelector('div[data-popup-status="error"]'),
     document.querySelectorAll('[data-action=profile__popup_open]')
 );
 
