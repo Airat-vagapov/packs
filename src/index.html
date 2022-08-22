@@ -422,22 +422,22 @@
                     </div>
                 </div>
             </div>
-            <div class="items-tabs-block">
-                <div class="items-tabs">
-                    <div class="items-tab">
-                        Новинки
-                        <div class="tabline"></div>
-                    </div>
-                    <div class="items-tab">
-                        Популярные товары
-                        <div class="tabline"></div>
-                    </div>
-                    <div class="items-tab">
-                        Распродажа
-                        <div class="tabline"></div>
-                    </div>
+            <div class="tabs-block">
+
+                <div class="tab tab-active">
+                    Новинки
+
                 </div>
-                <div class="tab-line">
+                <div class="tab">
+                    Популярные товары
+
+                </div>
+                <div class="tab">
+                    Распродажа
+
+                </div>
+
+                <div class="tabline">
                 </div>
             </div>
             <div class="items-scroll-x">
@@ -2883,7 +2883,7 @@
         </div>
     </div>
 
-    
+
 
 
     <div data-popup-name="login" class="popup">
@@ -2896,17 +2896,16 @@
                 <a class="popup-close a-blue-hover black-text">
                     <span class="icon-close"></span>
                 </a>
-                <div class="items-tabs" id="popup-tabs">
-                    <div class="items-tab tab-active" id="tab-1">
-                        Вход
-                    </div>
 
-                    <div class="items-tab">
-                        Регистрация
-                    </div>
+                <div class="tab tab-active" id="tab-1">
+                    Вход
                 </div>
-                <div class="tabline"></div>
 
+                <div class="tab">
+                    Регистрация
+                </div>
+
+                <div class="tabline"></div>
 
             </div>
 
@@ -2924,7 +2923,7 @@
                         <span class="subtext-gray-12 radio-text">E-mail</span>
                     </label>
                 </div>
-                <div class="login-tab">
+                <div data-tab-id="1" class="login-tab">
 
                     <p class="black-text head-text mb24">Войти через</p>
 
@@ -2949,7 +2948,7 @@
 
 
                 </div>
-                <div class="reg-tab">
+                <div data-tab-id="1" class="reg-tab">
                     <form class="registration-form">
                         <input class="form-field mb16 _req" type="text" placeholder="Телефон" name="phone">
                         <input class="form-field mb16 _req" type="text" placeholder="Пароль" name="pswrd">

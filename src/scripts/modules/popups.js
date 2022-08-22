@@ -128,7 +128,6 @@ const callbackPopup = new Popup(
 );
 
 callbackPopup.openPopupByBtns();
-console.log(callbackPopup);
 
 callbackPopup.closePopup();
 
@@ -147,7 +146,7 @@ loginPopup.closePopup();
 // Меняем типы входа по значению радиокнопки
 const loginPopupRadioBtns =
     loginPopup.popupContainer.querySelectorAll('.radio-btn');
-console.log(loginPopupRadioBtns);
+
 
 const switchPopupByRadio = (elem) => {
     const radioInput = elem.querySelector('input[type=radio]');

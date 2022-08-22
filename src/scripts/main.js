@@ -1,6 +1,8 @@
 // import forms from "scripts/modules/forms.js";
 // import popup from "./modules/popups";
 
+// const e = require("cors");
+
 // window.addEventListener('DOMContentLoaded', () => {
 //     forms();
 //     popup();
@@ -28,21 +30,21 @@ function removeDisableClass(elem) {
 function removeClass(elem, className) {
     elem.classList.remove(className);
 }
-// Открытие подтверждения города
-let citySubmitPopup = document.querySelector('.city-submit-window');
-document.addEventListener(
-    'DOMContentLoaded',
-    () => {
-        activate(citySubmitPopup);
-    },
-    { once: true }
-);
+// // Открытие подтверждения города
+// let citySubmitPopup = document.querySelector('.city-submit-window');
+// document.addEventListener(
+//     'DOMContentLoaded',
+//     () => {
+//         activate(citySubmitPopup);
+//     },
+//     { once: true }
+// );
 
 // Закрытие окна подтверждения города
-let closeBtn = citySubmitPopup.querySelector('.submit-close');
-closeBtn.addEventListener('click', () => {
-    disable(citySubmitPopup);
-});
+// let closeBtn = citySubmitPopup.querySelector('.submit-close');
+// closeBtn.addEventListener('click', () => {
+//     disable(citySubmitPopup);
+// });
 
 // Выбор раздела в верхней шапке
 const headLeftMenu = document.querySelector('.menu_left'),
@@ -86,14 +88,11 @@ const tabBlock = document.querySelectorAll('.tabs-block');
 
 tabBlock.forEach((item) => {
     const tabLine = item.querySelector('.tabline');
-    const firstTab = item
-        .querySelector('.items-tabs')
-        .querySelector('.items-tab');
-    const tab = item
-        .querySelector('.items-tabs')
-        .querySelectorAll('.items-tab');
-
-    tab.forEach((item) => {
+    const firstTab = item.querySelector('.tab');
+    const tabs = item.querySelectorAll('.tab');
+    
+    // Двигаем подчеркивание таба 
+    tabs.forEach((item) => {
         let tabCoord = item.getBoundingClientRect();
         let firstTabCoord = firstTab.getBoundingClientRect();
 
@@ -102,17 +101,36 @@ tabBlock.forEach((item) => {
             tabLine.style.left = tabCoord.left - firstTabCoord.left + 24 + 'px';
         }
 
+        // Переключение таба
         item.addEventListener('click', (e) => {
-            tab.forEach((tab) => {
+            const target = e.target;
+            // Убираем активность у всех табов
+            tabs.forEach((tab) => {
                 tab.classList.remove('tab-active');
             });
+
             tabLine.style.width = tabCoord.width + 'px';
 
             item.classList.add('tab-active');
 
             
             tabLine.style.left = tabCoord.left - firstTabCoord.left + 24 + 'px';
+
+            let index = getElIndexByClick(item, target);
+            console.log(index);
         });
     });
 });
+
+function getElIndexByClick (el, clickElement) {
+    let index = 0;
+    while (el = el.previousElementSibling) {
+        if(el != clickElement) {
+            index++;
+        }
+    }
+    return index;
+       
+}
+
 

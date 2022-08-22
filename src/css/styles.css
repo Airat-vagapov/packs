@@ -624,12 +624,13 @@
     display: block;
 }
 
-.items-tabs-block {
+.tabs-block {
     margin-bottom: 24px;
     position: relative;
+    display: flex;
 }
 
-.items-tabs {
+.tabs {
     display: inline-flex;
 }
 
@@ -638,10 +639,9 @@
     background-color: #dddddd;
 }
 
-.items-tab {
+.tab {
     margin-right: 40px;
     padding-bottom: 24px;
-    
     cursor: pointer;
 }
 
