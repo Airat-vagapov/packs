@@ -109,11 +109,10 @@ tabBlock.forEach((item) => {
                 tab.classList.remove('tab-active');
             });
 
+            // Подчеркивание выбранного таба
             tabLine.style.width = tabCoord.width + 'px';
-
             item.classList.add('tab-active');
 
-            
             tabLine.style.left = tabCoord.left - firstTabCoord.left + 24 + 'px';
 
             let index = getElIndexByClick(item, target);
@@ -130,7 +129,6 @@ function getElIndexByClick (el, clickElement) {
         }
     }
     return index;
-       
 }
 
 
