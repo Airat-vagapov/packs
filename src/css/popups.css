@@ -103,8 +103,16 @@
 }
 
 .tab-content {
-    display: flex;
-    flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+}
+
+.tab-content.active {
+    transition: opacity .3s;
+    opacity: 1;
+    pointer-events: auto;
+    position: relative;
 }
 
 .hide-popup-form {
@@ -117,6 +125,7 @@
     opacity: 1;
     pointer-events: auto;
     position: relative;
+    transition: opacity .3s;
 }
 
 .form-btn-group {
@@ -124,27 +133,6 @@
     justify-content: start;
 }
 
-.reg-tab {
-    display: flex;
-    opacity: 0;
-    pointer-events: none;
-    position: absolute;
-    padding: 24px;
-}
-
-.login-tab {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    opacity: 1;
-    transition: opacity .3s;
-    pointer-events: none;
-    position: relative;
-}
-/* .login-tab.active {
-    opacity: 1;
-    pointer-events: auto;
-} */
 
 
 

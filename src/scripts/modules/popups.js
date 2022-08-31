@@ -31,22 +31,25 @@ class Popup {
                 // Активация формы логина
                 if (this.name == 'login') {
                     const phoneRadio = this.popupContainer.querySelector(
-                            'input[data-type="phone"]'
-                        ),
-                        loginByPhone = this.popupContainer.querySelector(
-                            'form[data-login="byPhone"]'
-                        ),
-                        loginByEmail = this.popupContainer.querySelector(
-                            'form[data-login="byEmail"]'
+                            'input[data-radio-type="byPhone"]'
                         );
-
+                        // loginByPhone = this.popupContainer.querySelector(
+                        //     'form[data-radio-type="byPhone"]'
+                        // ),
+                        // loginByEmail = this.popupContainer.querySelector(
+                        //     'form[data-radio-type="byEmail"]'
+                        // );
                     phoneRadio.checked = true;
                     if (phoneRadio.checked) {
-                        if (this.popupContainer.contains(loginByPhone)) {
-                            disable(loginByEmail);
-                            activate(loginByPhone);
-                        }
-                    }
+                            // disable(loginByEmail);
+                            // activate(loginByPhone);
+                            activateContent(phoneRadio);
+                        
+                    };
+
+                    // Активация таба Вход
+                    activate(this.popupContainer.querySelector("[data-tab-type='login']"))
+                    activate(this.popupContainer.querySelector(".tab-content[data-tab-type='login']"))
                 }
             });
         });
@@ -143,33 +146,7 @@ const loginPopup = new Popup(
 loginPopup.openPopupByBtns();
 loginPopup.closePopup();
 
-// Меняем типы входа по значению радиокнопки
-const loginPopupRadioBtns =
-    loginPopup.popupContainer.querySelectorAll('.radio-btn');
 
 
-const switchPopupByRadio = (elem) => {
-    const radioInput = elem.querySelector('input[type=radio]');
 
-    if (radioInput.dataset.type == 'phone' && radioInput.checked) {
-        disable(
-            loginPopup.popupContainer.querySelector('[data-login="byEmail"]')
-        );
-        activate(
-            loginPopup.popupContainer.querySelector('[data-login="byPhone"]')
-        );
-    }
-    if (radioInput.dataset.type == 'email' && radioInput.checked) {
-        disable(
-            loginPopup.popupContainer.querySelector('[data-login="byPhone"]')
-        );
-        activate(
-            loginPopup.popupContainer.querySelector('[data-login="byEmail"]')
-        );
-    }
-};
-loginPopupRadioBtns.forEach((item) => {
-    item.addEventListener('click', () => {
-        switchPopupByRadio(item);
-    });
-});
+

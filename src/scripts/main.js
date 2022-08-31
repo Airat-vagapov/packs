@@ -83,43 +83,6 @@ checkbox.forEach((item) => {
     });
 });
 
-// Логика табов
-const tabBlock = document.querySelectorAll('.tabs-block');
-
-tabBlock.forEach((item) => {
-    const tabLine = item.querySelector('.tabline');
-    const firstTab = item.querySelector('.tab');
-    const tabs = item.querySelectorAll('.tab');
-    
-    // Двигаем подчеркивание таба 
-    tabs.forEach((item) => {
-        let tabCoord = item.getBoundingClientRect();
-        let firstTabCoord = firstTab.getBoundingClientRect();
-
-        if (item.classList.contains('tab-active')) {
-            tabLine.style.width = tabCoord.width + 'px';
-            tabLine.style.left = tabCoord.left - firstTabCoord.left + 24 + 'px';
-        }
-
-        // Переключение таба
-        item.addEventListener('click', (e) => {
-            const target = e.target;
-            // Убираем активность у всех табов
-            tabs.forEach((tab) => {
-                tab.classList.remove('tab-active');
-            });
-
-            // Подчеркивание выбранного таба
-            tabLine.style.width = tabCoord.width + 'px';
-            item.classList.add('tab-active');
-
-            tabLine.style.left = tabCoord.left - firstTabCoord.left + 24 + 'px';
-
-            let index = getElIndexByClick(item, target);
-            console.log(index);
-        });
-    });
-});
 
 function getElIndexByClick (el, clickElement) {
     let index = 0;
@@ -129,6 +92,16 @@ function getElIndexByClick (el, clickElement) {
         }
     }
     return index;
-}
+};
+
+function getElIndex (el) {
+    let index = 0;
+    while (el = el.previousElementSibling) {
+        if(el != el.previousElementSibling) {
+            index++;
+        }
+    }
+    return index;
+};
 
 

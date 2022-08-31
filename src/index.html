@@ -2755,7 +2755,7 @@
                             <p class="subtext-gray-12">г. Набережные Челны</p>
                         </div>
                         <div class="mb12">
-                            <a class="standart-btn white-text a-no-hover" href="/">
+                            <a  data-action="callback__Popup__Open" class="standart-btn white-text a-no-hover">
                                 Заказать звонок
                             </a>
                         </div>
@@ -2890,10 +2890,6 @@
         <div class="popup-fade"></div>
         <div class="popup-body">
 
-
-
-            <div class="tabs-block">
-
             <div class="tabs-block no-mb">
 
 
@@ -2901,11 +2897,11 @@
                     <span class="icon-close"></span>
                 </a>
 
-                <div class="tab tab-active" id="tab-1">
+                <div data-tab-type="login" class="tab tab-active" >
                     Вход
                 </div>
 
-                <div class="tab">
+                <div data-tab-type="reg" class="tab">
                     Регистрация
                 </div>
 
@@ -2914,24 +2910,24 @@
             </div>
 
             <div class="popup-content">
-                <div class="mb20" name="radiobtns">
-                    <label class="radio-btn mr24">
-                        <input data-type='phone' class="radio-btn-input" name="loginType" value="phone" type="radio"
-                            checked>
-                        <span class="radio-btn-label"></span>
-                        <span class="subtext-gray-12 radio-text">Телефон</span>
-                    </label>
-                    <label class="radio-btn">
-                        <input data-type='email' class="radio-btn-input" name="loginType" value="email" type="radio">
-                        <span class="radio-btn-label"></span>
-                        <span class="subtext-gray-12 radio-text">E-mail</span>
-                    </label>
-                </div>
-                <div data-tab-id="1" class="login-tab">
-
+                
+                <div data-tab-type="login" class="tab-content">
+                    <div class="mb20" name="radiobtns">
+                        <label class="radio-btn mr24">
+                            <input data-radio-type='byPhone' class="radio-btn-input" name="loginType" value="phone" type="radio"
+                                checked>
+                            <span class="radio-btn-label"></span>
+                            <span class="subtext-gray-12 radio-text">Телефон</span>
+                        </label>
+                        <label class="radio-btn">
+                            <input data-radio-type='byEmail' class="radio-btn-input" name="loginType" value="email" type="radio">
+                            <span class="radio-btn-label"></span>
+                            <span class="subtext-gray-12 radio-text">E-mail</span>
+                        </label>
+                    </div>
                     <p class="black-text head-text mb24">Войти через</p>
 
-                    <form data-login="byPhone" class="hide-popup-form">
+                    <form data-radio-content='byPhone' class="hide-popup-form">
                         <input class="form-field mb16 _req" type="text" placeholder="Телефон" name="phone">
                         <input class="form-field mb24 _req" type="password" placeholder="Пароль" name="pswrd">
 
@@ -2940,7 +2936,7 @@
                             <a class="foot-tex no-mb a-blue-hover">Забыли пароль?</a>
                         </div>
                     </form>
-                    <form data-login="byEmail" class="hide-popup-form">
+                    <form data-radio-content='byEmail' class="hide-popup-form">
                         <input class="form-field mb16 _req" type="text" placeholder="E-mail" name="E-mail">
                         <input class="form-field mb24 _req" type="password" placeholder="Пароль" name="pswrd">
 
@@ -2949,10 +2945,10 @@
                             <a class="foot-tex no-mb a-blue-hover">Забыли пароль?</a>
                         </div>
                     </form>
-
-
                 </div>
-                <div data-tab-id="1" class="reg-tab">
+
+                
+                <div data-tab-type="reg" class="tab-content">
                     <form class="registration-form">
                         <input class="form-field mb16 _req" type="text" placeholder="Телефон" name="phone">
                         <input class="form-field mb16 _req" type="text" placeholder="Пароль" name="pswrd">
@@ -2960,7 +2956,7 @@
                             name="pswrd-confirm">
 
                         <div class="checkbox popup-flex-row mb16">
-                            <input type="checkbox" name="agree" id="confed-checkbox">
+                            <input class="_req" type="checkbox" name="agree" id="confed-checkbox">
                             <label for="confed-checkbox" class="checkbox-label" id="confed-checkbox-label"></label>
                             <div class="checkbox-text" id="conf-checkbox-text">Ознакомлен с <a
                                     class="checkbox-link blue-txt-link">политикой конфиденциальности</a></div>
@@ -2981,7 +2977,9 @@
 
     <script src="https://unpkg.com/imask"></script>
     <script type="text/javascript" src="scripts/main.js"></script>
+    <script type="text/javascript" src="scripts/modules/radioButtons.js"></script>
     <script type="text/javascript" src="scripts/modules/popups.js"></script>
+    <script type="text/javascript" src="scripts/modules/tabs.js"></script>
     <script type="text/javascript" src="scripts/modules/forms.js"></script>
     <script type="text/javascript" src="scripts/modules/validate.js"></script>
 
