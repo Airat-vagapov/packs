@@ -32,6 +32,7 @@ radioBtns.forEach((radio) => {
     });
 });
 
+// Убираем активность с радио кнопок и убираем контент
 function disableRadioBtns(container) {
     let all = container.querySelectorAll('input[type=radio]');
     let content = container.querySelectorAll('form[data-radio-content]');
