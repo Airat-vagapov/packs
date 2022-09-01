@@ -48,8 +48,8 @@ class Popup {
                     };
 
                     // Активация таба Вход
-                    activate(this.popupContainer.querySelector("[data-tab-type='login']"))
-                    activate(this.popupContainer.querySelector(".tab-content[data-tab-type='login']"))
+                    activateTabByName(this.popupContainer, 'login')
+                    
                 }
             });
         });
@@ -79,6 +79,10 @@ class Popup {
                     disable(this.success);
                     disable(this.error);
                 }
+
+                // Сброс активности форм на попапе логина
+                closeTabContent(this.popupContainer);
+                deactivateAllTabs(this.popupContainer)
             });
         });
 
@@ -98,8 +102,12 @@ class Popup {
                     if (item.parentElement.contains(loginByPhone)) {
                         setTimeout(disable, 300, loginByPhone);
                     }
+
+                    closeTabContent(this.popupContainer);
+                    deactivateAllTabs(this.popupContainer)
                 }
             });
+            
         });
 
         // Закрытие по кнопке Esc
@@ -116,10 +124,10 @@ class Popup {
 
                 disable(this.success);
                 disable(this.error);
+                closeTabContent(this.popupContainer);  
+                deactivateAllTabs(this.popupContainer) 
             }
         });
-
-        
     }
 }
 
