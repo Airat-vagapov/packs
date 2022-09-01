@@ -30,23 +30,6 @@ class Popup {
 
                 // Активация формы логина
                 if (this.name == 'login') {
-                    const phoneRadio = this.popupContainer.querySelector(
-                            'input[data-radio-type="byPhone"]'
-                        );
-                        // loginByPhone = this.popupContainer.querySelector(
-                        //     'form[data-radio-type="byPhone"]'
-                        // ),
-                        // loginByEmail = this.popupContainer.querySelector(
-                        //     'form[data-radio-type="byEmail"]'
-                        // );
-                    phoneRadio.checked = true;
-                    if (phoneRadio.checked) {
-                            // disable(loginByEmail);
-                            // activate(loginByPhone);
-                            activateContent(phoneRadio);
-                        
-                    };
-
                     // Активация таба Вход
                     activateTabByName(this.popupContainer, 'login')
                     
@@ -83,6 +66,9 @@ class Popup {
                 // Сброс активности форм на попапе логина
                 closeTabContent(this.popupContainer);
                 deactivateAllTabs(this.popupContainer)
+
+                // Сброс радиокнопки
+
             });
         });
 
@@ -141,7 +127,6 @@ const callbackPopup = new Popup(
 );
 
 callbackPopup.openPopupByBtns();
-
 callbackPopup.closePopup();
 
 // Попап профиля (логин и регистрация)
