@@ -90,6 +90,9 @@ function deactivateAllTabs(container) {
 }
 
 function activateTabByName (container, tabName) {
+    deactivateAllTabs(container);
+    closeTabContent(container)
+
     let tab = container.querySelector(`[data-tab-type='${tabName}']`);
     tab.classList.add('tab-active');
     

@@ -30,29 +30,39 @@ class Popup {
 
                 // Активация формы логина
                 if (this.name == 'login') {
+                    // Включение радиокнопки
+                    let radioBtns = this.popupContainer.querySelectorAll('input[type=radio]');
+                    disableRadioBtns(this.popupContainer);
+                    
+                    radioBtns.forEach((radio) => {    
+                        if(radio.checked == false) {
+                            console.log(radio.dataset.radioType);
+                            if(radio.dataset.radioType == 'byPhone') {
+                                radio.checked = true;
+                                activateContent(radio);
+                            }
+                        }
+                    })
+
+                    if(('input[type=radio]').checked == false) {
+
+                    }
                     // Активация таба Вход
                     activateTabByName(this.popupContainer, 'login')
                     
                 }
             });
         });
+        
     }
 
     closePopup() {
         const btn = document.querySelectorAll('.popup-close');
 
-        // Закрытие по кнопке «закрыть»
+        // Закрытие по кнопке «закрыть» (крестик)
         btn.forEach((btn) => {
             btn.addEventListener('click', () => {
                 disable(this.popupContainer);
-
-                // Убираем активность с формы логина
-                const loginByPhone = this.popupContainer.querySelector(
-                    'form[data-login="byPhone"]'
-                );
-                if (this.popupContainer.contains(loginByPhone)) {
-                    setTimeout(disable, 300, loginByPhone);
-                }
 
                 // Закрытие success/error
                 if (
@@ -67,8 +77,6 @@ class Popup {
                 closeTabContent(this.popupContainer);
                 deactivateAllTabs(this.popupContainer)
 
-                // Сброс радиокнопки
-
             });
         });
 
@@ -82,15 +90,15 @@ class Popup {
                     disable(item.parentElement);
 
                     // Убираем активность с формы логина
-                    const loginByPhone = item.parentElement.querySelector(
-                        'form[data-login="byPhone"]'
-                    );
-                    if (item.parentElement.contains(loginByPhone)) {
-                        setTimeout(disable, 300, loginByPhone);
-                    }
+                    // const loginByPhone = item.parentElement.querySelector(
+                    //     'form[data-login="byPhone"]'
+                    // );
+                    // if (item.parentElement.contains(loginByPhone)) {
+                    //     setTimeout(disable, 300, loginByPhone);
+                    // }
 
-                    closeTabContent(this.popupContainer);
-                    deactivateAllTabs(this.popupContainer)
+                    // closeTabContent(this.popupContainer);
+                    // deactivateAllTabs(this.popupContainer);
                 }
             });
             
@@ -101,19 +109,32 @@ class Popup {
             if (e.key == 'Escape') {
                 disable(this.popupContainer);
                 // Убираем активность с формы логина
-                const loginByPhone = this.popupContainer.querySelector(
-                    'form[data-login="byPhone"]'
-                );
-                if (this.popupContainer.contains(loginByPhone)) {
-                    setTimeout(disable, 300, loginByPhone);
-                }
+                // const loginByPhone = this.popupContainer.querySelector(
+                //     'form[data-login="byPhone"]'
+                // );
+                // if (this.popupContainer.contains(loginByPhone)) {
+                //     setTimeout(disable, 300, loginByPhone);
+                // }
 
                 disable(this.success);
                 disable(this.error);
                 closeTabContent(this.popupContainer);  
-                deactivateAllTabs(this.popupContainer) 
+                deactivateAllTabs(this.popupContainer); 
             }
         });
+
+        // Закрытие success и error по кнопке «закрыть»
+        const successTextClose = this.success.querySelector('.text-close-btn');
+        successTextClose.addEventListener('click', () => {
+            disable(this.success);
+        })
+
+        const errorTextClose = this.error.querySelector('.text-close-btn');
+        errorTextClose.addEventListener('click', () => {
+            disable(this.error);
+            closeTabContent(this.popupContainer);  
+            deactivateAllTabs(this.popupContainer);
+        })
     }
 }
 
@@ -140,6 +161,24 @@ const loginPopup = new Popup(
 
 loginPopup.openPopupByBtns();
 loginPopup.closePopup();
+
+
+function getAllPopups() {
+    let result = document.querySelectorAll('.popup');
+    return result;
+}
+
+function getActivePopup () {
+    let all = getAllPopups();
+    let result
+    all.forEach((popup) => {
+        if(popup.classList.contains('active')) {
+            result = popup;
+        }
+    });
+    return result;
+}
+
 
 
 

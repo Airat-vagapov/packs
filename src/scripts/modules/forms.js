@@ -196,19 +196,23 @@ const forms = () => {
                 postData('php/server.php', formData)
                     .then((result) => {
                         console.log(result);
-                        // statusMessage.textContent = message.success;
-                        document
-                            .querySelector('.callback-popup')
-                            .querySelector('.popup-body')
-                            .classList.remove('active');
-                        activate(message.success);
+
+                        // Если форма в попапе
+                        if(item.dataset.popupForm == "t"){
+                            let popup = getActivePopup();
+                            console.log(popup);
+                            disable(popup);
+                            activate(message.success);
+                        }
+                        
                     })
                     .catch(() => {
-                        document
-                            .querySelector('.callback-popup')
-                            .querySelector('.popup-body')
-                            .classList.remove('active');
-                        activate(message.error);
+                        if(item.dataset.popupForm == "t"){
+                            let popup = getActivePopup();
+                            console.log(popup);
+                            disable(popup);
+                            activate(message.error);
+                        }
                     })
                     .finally(() => {
                         clearInputs();
