@@ -4,9 +4,7 @@ function activateContent(radioInput) {
     let radioInputType = radioInput.dataset.radioType;
     if (radioInput.checked) {
         activate(
-            document.querySelector(
-                `[data-radio-content="${radioInputType}"]`
-            )
+            document.querySelector(`[data-radio-content="${radioInputType}"]`)
         );
     }
 }
@@ -23,14 +21,13 @@ function disableActiveContent(radioInput) {
 
 radioBtns.forEach((radio) => {
     const radioInput = radio.querySelector('input[type=radio]');
-    
 
+    if(radioInput.checked) {
+        activateContent(radioInput);
+    }
 
     radio.addEventListener('click', (e) => {
         disableActiveContent(radioInput);
         activateContent(radioInput);
     });
-
-
-
 });
