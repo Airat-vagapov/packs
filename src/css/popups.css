@@ -12,14 +12,17 @@
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: opacity .3s;
+    transition: all .3s;
     pointer-events: none;
     overflow-y: hidden;
+    visibility: hidden;
 }
 
 .popup.active {
+    visibility: visible;
     opacity: 1;
     pointer-events: auto;
+    transition: all .3s;
 }
 
 .popup-fade {

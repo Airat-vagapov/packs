@@ -2638,7 +2638,7 @@
                             <p class="subtext-gray-12">г. Набережные Челны</p>
                         </div>
                         <div class="mb12">
-                            <a class="standart-btn white-text a-no-hover" href="/">
+                            <a data-action="callback__Popup__Open" class="standart-btn white-text a-no-hover">
                                 Заказать звонок
                             </a>
                         </div>
@@ -2889,29 +2889,30 @@
     <div data-popup-name="login" class="popup">
         <div class="popup-fade"></div>
         <div class="popup-body">
+            <div class="popup-head no-p">
+                <div class="tabs-block no-mb">
 
-            <div class="tabs-block no-mb">
 
+                    <a class="popup-close a-blue-hover black-text">
+                        <span class="icon-close"></span>
+                    </a>
 
-                <a class="popup-close a-blue-hover black-text">
-                    <span class="icon-close"></span>
-                </a>
+                    <div data-tab-type="login" class="tab" >
+                        Вход
+                    </div>
 
-                <div data-tab-type="login" class="tab tab-active" >
-                    Вход
+                    <div data-tab-type="reg" class="tab">
+                        Регистрация
+                    </div>
+
+                    <div class="tabline"></div>
+
                 </div>
-
-                <div data-tab-type="reg" class="tab">
-                    Регистрация
-                </div>
-
-                <div class="tabline"></div>
-
             </div>
 
             <div class="popup-content">
                 
-                <div data-tab-type="login" class="tab-content">
+                <div data-tab-type="login" class="tab-content active">
                     <div class="mb20" name="radiobtns">
                         <label class="radio-btn mr24">
                             <input data-radio-type='byPhone' class="radio-btn-input" name="loginType" value="phone" type="radio"

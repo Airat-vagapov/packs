@@ -16,13 +16,6 @@ ul {
     opacity: 1;
 }
 
-/* .disable {
-	opacity: 0;
-	pointer-events: none;
-}  */
-
-
-
 .form-field {
     width: 100%;
     padding: 14px 16px;
@@ -158,6 +151,10 @@ h2 {
     font-size: 24px;
     line-height: 32px;
     font-weight: 700;
+}
+
+.no-p {
+    padding: 0!important;
 }
 
 .no-m {
