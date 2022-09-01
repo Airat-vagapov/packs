@@ -22,7 +22,7 @@ function disableActiveContent(radioInput) {
 radioBtns.forEach((radio) => {
     const radioInput = radio.querySelector('input[type=radio]');
 
-    if(radioInput.checked) {
+    if (radioInput.checked) {
         activateContent(radioInput);
     }
 
@@ -31,3 +31,18 @@ radioBtns.forEach((radio) => {
         activateContent(radioInput);
     });
 });
+
+function disableRadioBtns(container) {
+    let all = container.querySelectorAll('input[type=radio]');
+    let content = container.querySelectorAll('form[data-radio-content]');
+
+    all.forEach((btn) => {
+        btn.checked = false;
+
+        content.forEach((item) => {
+            if (btn.dataset.radioType == item.dataset.radioContent) {
+                disable(item);
+            }
+        });
+    });
+}
