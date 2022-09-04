@@ -31,29 +31,29 @@ class Popup {
                 // Активация формы логина
                 if (this.name == 'login') {
                     // Включение радиокнопки
-                    let radioBtns = this.popupContainer.querySelectorAll('input[type=radio]');
+                    let radioBtns =
+                        this.popupContainer.querySelectorAll(
+                            'input[type=radio]'
+                        );
                     disableRadioBtns(this.popupContainer);
-                    
-                    radioBtns.forEach((radio) => {    
-                        if(radio.checked == false) {
+
+                    radioBtns.forEach((radio) => {
+                        if (radio.checked == false) {
                             console.log(radio.dataset.radioType);
-                            if(radio.dataset.radioType == 'byPhone') {
+                            if (radio.dataset.radioType == 'byPhone') {
                                 radio.checked = true;
                                 activateContent(radio);
                             }
                         }
-                    })
+                    });
 
-                    if(('input[type=radio]').checked == false) {
-
+                    if ('input[type=radio]'.checked == false) {
                     }
                     // Активация таба Вход
-                    activateTabByName(this.popupContainer, 'login')
-                    
+                    activateTabByName(this.popupContainer, 'login');
                 }
             });
         });
-        
     }
 
     closePopup() {
@@ -75,8 +75,7 @@ class Popup {
 
                 // Сброс активности форм на попапе логина
                 closeTabContent(this.popupContainer);
-                deactivateAllTabs(this.popupContainer)
-
+                deactivateAllTabs(this.popupContainer);
             });
         });
 
@@ -101,7 +100,6 @@ class Popup {
                     // deactivateAllTabs(this.popupContainer);
                 }
             });
-            
         });
 
         // Закрытие по кнопке Esc
@@ -118,8 +116,8 @@ class Popup {
 
                 disable(this.success);
                 disable(this.error);
-                closeTabContent(this.popupContainer);  
-                deactivateAllTabs(this.popupContainer); 
+                closeTabContent(this.popupContainer);
+                deactivateAllTabs(this.popupContainer);
             }
         });
 
@@ -127,14 +125,14 @@ class Popup {
         const successTextClose = this.success.querySelector('.text-close-btn');
         successTextClose.addEventListener('click', () => {
             disable(this.success);
-        })
+        });
 
         const errorTextClose = this.error.querySelector('.text-close-btn');
         errorTextClose.addEventListener('click', () => {
             disable(this.error);
-            closeTabContent(this.popupContainer);  
+            closeTabContent(this.popupContainer);
             deactivateAllTabs(this.popupContainer);
-        })
+        });
     }
 }
 
@@ -162,25 +160,18 @@ const loginPopup = new Popup(
 loginPopup.openPopupByBtns();
 loginPopup.closePopup();
 
-
 function getAllPopups() {
     let result = document.querySelectorAll('.popup');
     return result;
 }
 
-function getActivePopup () {
+function getActivePopup() {
     let all = getAllPopups();
-    let result
+    let result;
     all.forEach((popup) => {
-        if(popup.classList.contains('active')) {
+        if (popup.classList.contains('active')) {
             result = popup;
         }
     });
     return result;
 }
-
-
-
-
-
-
