@@ -31,20 +31,20 @@ function removeClass(elem, className) {
     elem.classList.remove(className);
 }
 // // Открытие подтверждения города
-// let citySubmitPopup = document.querySelector('.city-submit-window');
-// document.addEventListener(
-//     'DOMContentLoaded',
-//     () => {
-//         activate(citySubmitPopup);
-//     },
-//     { once: true }
-// );
+let citySubmitPopup = document.querySelector('.city-submit-window');
+document.addEventListener(
+    'DOMContentLoaded',
+    () => {
+        activate(citySubmitPopup);
+    },
+    { once: true }
+);
 
 // Закрытие окна подтверждения города
-// let closeBtn = citySubmitPopup.querySelector('.submit-close');
-// closeBtn.addEventListener('click', () => {
-//     disable(citySubmitPopup);
-// });
+let closeBtn = citySubmitPopup.querySelector('.submit-close');
+closeBtn.addEventListener('click', () => {
+    disable(citySubmitPopup);
+});
 
 // Выбор раздела в верхней шапке
 const headLeftMenu = document.querySelector('.menu_left'),
