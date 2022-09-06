@@ -67,18 +67,19 @@
                     </div>
                     <div class="header_top_right">
                         <div class="menu_right">
-                            <div class="menu_drop drop-active mr16" id="city">
+                            <div data-action='citySelect__popup_open' class="menu_drop drop-active mr16">
                                 <span class="icon-geo icon-head-menu-2"></span>
                                 <a class=" button_black a-blue-hover ">Набережные Челны</a>
                                 <span class="icon-drop icon-dorp-2"></span>
 
-                                <div class="city-submit-window">
-                                    <div class="city-submit-window-content">
-                                        <p class="city-submit-text black-text mb16">Ваш город <b>Набережные Челны?</b>
-                                        </p>
-                                        <button class="submit-close standart-btn mr16">Да</button>
-                                        <a href="/" class="blue-txt-link">Выбрать другой</a>
-                                    </div>
+                                
+                            </div>
+                            <div class="city-submit-window">
+                                <div class="city-submit-window-content">
+                                    <p class="city-submit-text black-text mb16">Ваш город <b>Набережные Челны?</b>
+                                    </p>
+                                    <button class="submit-close standart-btn mr16">Да</button>
+                                    <a data-action='citySelect__popup_open' class="blue-txt-link">Выбрать другой</a>
                                 </div>
                             </div>
 
@@ -2972,6 +2973,69 @@
             </div>
         </div>
 
+    </div>
+
+    <div data-popup-name="city-select" class="popup">
+        <div class="popup-fade"></div>
+        <div class="popup-body city__select__body">
+            <div class="popup-head">
+                <div class="black-text head-text ">
+                    Другой город
+                </div>
+                <a class="popup-close a-blue-hover black-text">
+                    <span class="icon-close"></span>
+                </a>    
+            </div>
+            <div class="popup-content city__select__content">
+                <div class="flex-col city__select__col mb24">
+
+                        <a class="a-blue-hover">г. Москва</a>
+                        <a class="a-blue-hover">г. Санкт-Петербург</a>
+                        <a class="a-blue-hover">г. Нижний Новгород</a>
+                        <a class="a-blue-hover">г. Казань</a>
+
+
+                </div>
+
+                <div class="flex-col city__select__col mb24">
+                    <div class="black-text head-text mb12">А</div>
+                    <a class="a-blue-hover">г. Москва</a>
+                    <a class="a-blue-hover">г. Санкт-Петербург</a>
+                    <a class="a-blue-hover">г. Нижний Новгород</a>
+                    <a class="a-blue-hover">г. Казань</a>
+                </div>
+                <div class="flex-col city__select__col mb24">
+                    <div class="black-text head-text mb12">А</div>
+                    <a class="a-blue-hover">г. Москва</a>
+                    <a class="a-blue-hover">г. Санкт-Петербург</a>
+                    <a class="a-blue-hover">г. Нижний Новгород</a>
+                    <a class="a-blue-hover">г. Казань</a>
+                </div>
+                <div class="flex-col city__select__col mb24">
+                    <div class="black-text head-text mb12">А</div>
+                    <a class="a-blue-hover">г. Москва</a>
+                    <a class="a-blue-hover">г. Санкт-Петербург</a>
+                    <a class="a-blue-hover">г. Нижний Новгород</a>
+                    <a class="a-blue-hover">г. Казань</a>
+                </div>
+                <div class="flex-col city__select__col mb24">
+                    <div class="black-text head-text mb12">А</div>
+                    <a class="a-blue-hover">г. Москва</a>
+                    <a class="a-blue-hover">г. Санкт-Петербург</a>
+                    <a class="a-blue-hover">г. Нижний Новгород</a>
+                    <a class="a-blue-hover">г. Казань</a>
+                </div>
+            </div>
+
+            <div class="popup-footer">
+                <div class="black-text head-text">
+                    Не нашли свой город?
+                </div>
+                <input class="input-search" type="text" name="search"
+                                placeholder="Введите название вашего города" autocomplete="off"></input>
+            </div>
+
+        </div>
     </div>
 
 

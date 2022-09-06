@@ -9,11 +9,13 @@ class Popup {
     }
 
     openPopupByBtns() {
+        
         // Находим кнопки открытия попапа.
         // Вешаем событие на каждую кнопку
         // Проверяем на попап и открываем
         this.openBtns.forEach((btn) => {
             btn.addEventListener('click', () => {
+                disable(citySubmitPopup);
                 activate(this.popupContainer);
 
                 // Очистка инпутов
@@ -159,6 +161,20 @@ const loginPopup = new Popup(
 
 loginPopup.openPopupByBtns();
 loginPopup.closePopup();
+
+// Попап выбора другого города 
+const citySelect = new Popup(
+    'citySelect',
+    document.querySelector('div[data-popup-name="city-select"'),
+    null,
+    null,
+    document.querySelectorAll('[data-action="citySelect__popup_open"]')
+)
+
+citySelect.openPopupByBtns();
+citySelect.closePopup();
+
+
 
 function getAllPopups() {
     let result = document.querySelectorAll('.popup');

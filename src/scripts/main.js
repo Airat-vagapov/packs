@@ -1,17 +1,8 @@
-// import forms from "scripts/modules/forms.js";
-// import popup from "./modules/popups";
 
-// const e = require("cors");
-
-// window.addEventListener('DOMContentLoaded', () => {
-//     forms();
-//     popup();
-// })
-
-// Переменные
+// Классы активации
 const activeClassName = 'active',
-    subMenuActiveClass = 'submenu-active',
-    disableClass = 'disable';
+      subMenuActiveClass = 'submenu-active',
+      disableClass = 'disable';
 
 // Добавление класса active (display: flex)
 function activate(elem) {

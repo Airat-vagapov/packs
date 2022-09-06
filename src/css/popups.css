@@ -45,6 +45,12 @@
     border-bottom: 1px solid #dddddd;
     padding: 24px;
 }
+.popup-footer {
+    display: flex;
+    position: relative;
+    border-top: 1px solid #dddddd;
+    padding: 24px;
+}
 
 .popup-content {
     padding: 24px;
@@ -95,28 +101,7 @@
     border-color: #3b52f5;
 }
 
-/* Попап входа и регистрации */
 
-
-.tabs-block {
-    padding: 24px 24px 0 24px;
-    border-bottom: 1px solid #dddddd;
-    position: relative;
-    width: 100%;
-}
-
-.tab-content {
-    opacity: 0;
-    pointer-events: none;
-    position: absolute;
-}
-
-.tab-content.active {
-    transition: opacity .3s;
-    opacity: 1;
-    pointer-events: auto;
-    position: relative;
-}
 
 .hide-popup-form {
     opacity: 0;
@@ -136,6 +121,23 @@
     justify-content: start;
 }
 
+/* Выбор города */
+
+.city__select__body {
+    width: 1089px;
+}
+
+.city__select__content {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 464px;
+    overflow-y: scroll;
+}
+
+.city__select__col {
+    width: 25%;
+    height: auto;
+}
 
 
 
