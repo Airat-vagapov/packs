@@ -191,3 +191,12 @@ function getActivePopup() {
     });
     return result;
 }
+
+// Логика на попапе выбора города
+function getAllCities (container) {
+    
+}
+
+getAllCities(citySelect.popupContainer) {
+    
+}
