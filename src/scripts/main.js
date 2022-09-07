@@ -74,7 +74,7 @@ checkbox.forEach((item) => {
     });
 });
 
-
+// Получить индекс элемента по клику
 function getElIndexByClick (el, clickElement) {
     let index = 0;
     while (el = el.previousElementSibling) {
@@ -85,6 +85,7 @@ function getElIndexByClick (el, clickElement) {
     return index;
 };
 
+// Получить индекс элемента
 function getElIndex (el) {
     let index = 0;
     while (el = el.previousElementSibling) {
@@ -94,5 +95,21 @@ function getElIndex (el) {
     }
     return index;
 };
+
+// Получить все элементы в блоке
+function getAllElems (container) {
+    let all = container.querySelectorAll('.city__select__col');
+    return all;
+};
+
+// Удалить все элементы в блоке
+function removeElems (container) {
+    let all = getAllElems(container);
+    all.forEach((item) => {
+        item.remove();
+    })
+}
+
+
 
 

@@ -9,7 +9,6 @@ class Popup {
     }
 
     openPopupByBtns() {
-        
         // Находим кнопки открытия попапа.
         // Вешаем событие на каждую кнопку
         // Проверяем на попап и открываем
@@ -124,17 +123,22 @@ class Popup {
         });
 
         // Закрытие success и error по кнопке «закрыть»
-        const successTextClose = this.success.querySelector('.text-close-btn');
-        successTextClose.addEventListener('click', () => {
-            disable(this.success);
-        });
+        if (this.success != undefined) {
+            const successTextClose =
+                this.success.querySelector('.text-close-btn');
+            successTextClose.addEventListener('click', () => {
+                disable(this.success);
+            });
+        }
 
-        const errorTextClose = this.error.querySelector('.text-close-btn');
-        errorTextClose.addEventListener('click', () => {
-            disable(this.error);
-            closeTabContent(this.popupContainer);
-            deactivateAllTabs(this.popupContainer);
-        });
+        if (this.error != undefined) {
+            const errorTextClose = this.error.querySelector('.text-close-btn');
+            errorTextClose.addEventListener('click', () => {
+                disable(this.error);
+                closeTabContent(this.popupContainer);
+                deactivateAllTabs(this.popupContainer);
+            });
+        }
     }
 }
 
@@ -162,19 +166,17 @@ const loginPopup = new Popup(
 loginPopup.openPopupByBtns();
 loginPopup.closePopup();
 
-// Попап выбора другого города 
+// Попап выбора другого города
 const citySelect = new Popup(
     'citySelect',
     document.querySelector('div[data-popup-name="city-select"'),
-    null,
-    null,
+    undefined,
+    undefined,
     document.querySelectorAll('[data-action="citySelect__popup_open"]')
-)
+);
 
 citySelect.openPopupByBtns();
 citySelect.closePopup();
-
-
 
 function getAllPopups() {
     let result = document.querySelectorAll('.popup');
@@ -192,11 +194,27 @@ function getActivePopup() {
     return result;
 }
 
-// Логика на попапе выбора города
-function getAllCities (container) {
-    
+// Поиск города в попапе
+function citySearch(popup) {
+    let container = popup.popupContainer;
+    let search = container.querySelector('[data-type="city-search"]');
+    let content = container.querySelectorAll('[data-type="city-name"]');
+
+    let arr = Array.from(content);
+
+    search.addEventListener('keyup', () => {
+        console.log(search.value);
+        let result = arr.find((el) => {
+            if (el.innerHTML.toLowerCase() == search.value.toLowerCase()) return el;
+        });
+        console.log(result);
+
+        content.forEach((item) => {
+            if (result != null && item.innerHTML != result.innerHTML) {
+                item.remove();
+            }
+        });
+    });
 }
 
-getAllCities(citySelect.popupContainer) {
-    
-}
+citySearch(citySelect);
