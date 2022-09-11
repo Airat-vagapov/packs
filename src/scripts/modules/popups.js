@@ -196,23 +196,41 @@ function getActivePopup() {
 
 // Поиск города в попапе
 function citySearch(popup) {
-    let container = popup.popupContainer;
-    let search = container.querySelector('[data-type="city-search"]');
-    let content = container.querySelectorAll('[data-type="city-name"]');
+    const container = popup.popupContainer;
+    const contentContainer = container.querySelector('.popup-content');
+    const cityList = container.querySelector('.city__select__col');
+    const cityListTag = container.querySelector('[data-type="city-tag"]');
+    const search = container.querySelector('[data-type="city-search"]');
+    const content = container.querySelectorAll('[data-type="city-name"]');
 
     let arr = Array.from(content);
-
+    
     search.addEventListener('keyup', () => {
-        console.log(search.value);
-        let result = arr.find((el) => {
-            if (el.innerHTML.toLowerCase() == search.value.toLowerCase()) return el;
-        });
-        console.log(result);
+        // content.forEach((item) => {item.remove()});
+        
+        // Удаляем все элементы в контенте попапа
+        while (contentContainer.firstChild) {
+            contentContainer.removeChild(contentContainer.firstChild);
+        }
 
-        content.forEach((item) => {
-            if (result != null && item.innerHTML != result.innerHTML) {
-                item.remove();
+        while(cityList.firstChild) {
+            cityList.removeChild(cityList.firstChild);
+        }
+    
+        
+        // Фильтруем города по введенному значению
+        let result = arr.filter((el) =>
+            el.innerHTML.toLowerCase().includes(search.value.toLowerCase())
+        );
+        console.log(result);
+        
+        // Строим выдачу (расставляем каждый элемент)
+        result.forEach((elem) => {
+            if(elem.dataset.popularCity == "t") {
+                let popularList = contentContainer.appendChild(cityList);
+                popularList.appendChild(elem);
             }
+            // cityList.appendChild(elem);
         });
     });
 }
