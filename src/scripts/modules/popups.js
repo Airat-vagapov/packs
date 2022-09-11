@@ -203,34 +203,60 @@ function citySearch(popup) {
     const search = container.querySelector('[data-type="city-search"]');
     const content = container.querySelectorAll('[data-type="city-name"]');
 
+    // Элемент списка городов по букве
+    const newCityList = document.createElement('div');
+    newCityList.classList.add('flex-col', 'city__select__col', 'mb24');
+
+    const cityTag = document.createElement('div');
+    cityTag.classList.add('black-text', 'head-text', 'mb12');
+
     let arr = Array.from(content);
-    
+
     search.addEventListener('keyup', () => {
         // content.forEach((item) => {item.remove()});
-        
+
         // Удаляем все элементы в контенте попапа
         while (contentContainer.firstChild) {
             contentContainer.removeChild(contentContainer.firstChild);
         }
 
-        while(cityList.firstChild) {
+        while (cityList.firstChild) {
             cityList.removeChild(cityList.firstChild);
         }
-    
-        
+
         // Фильтруем города по введенному значению
         let result = arr.filter((el) =>
             el.innerHTML.toLowerCase().includes(search.value.toLowerCase())
         );
-        console.log(result);
-        
+
+        let list = contentContainer.appendChild(newCityList);
+
+        while (list.firstChild) {
+            list.removeChild(list.firstChild);
+        }
+
         // Строим выдачу (расставляем каждый элемент)
         result.forEach((elem) => {
-            if(elem.dataset.popularCity == "t") {
-                let popularList = contentContainer.appendChild(cityList);
-                popularList.appendChild(elem);
-            }
-            // cityList.appendChild(elem);
+            // Отображение популярных городов
+
+            // if(elem.dataset.popularCity == "t") {
+            //     let popularList = contentContainer.appendChild(newCityList);
+            //     popularList.appendChild(elem);
+            // } else {
+            // Отображение остальных
+
+            let inner = elem.innerHTML;
+            let toDel = 'г. ';
+            let cityName = inner.replace(toDel, '');
+
+            let first = cityName.charAt(0);
+            cityTag.innerHTML = first;
+
+            list.appendChild(cityTag);
+
+            list.appendChild(elem);
+
+            // }
         });
     });
 }
