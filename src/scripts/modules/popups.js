@@ -40,7 +40,6 @@ class Popup {
 
                     radioBtns.forEach((radio) => {
                         if (radio.checked == false) {
-                            console.log(radio.dataset.radioType);
                             if (radio.dataset.radioType == 'byPhone') {
                                 radio.checked = true;
                                 activateContent(radio);
@@ -198,14 +197,12 @@ function getActivePopup() {
 function citySearch(popup) {
     const container = popup.popupContainer;
     const contentContainer = container.querySelector('.popup-content');
-    const cityList = container.querySelector('.city__select__col');
+    // const cityList = container.querySelector('.city__select__col');
     const cityListTag = container.querySelector('[data-type="city-tag"]');
     const search = container.querySelector('[data-type="city-search"]');
     const content = container.querySelectorAll('[data-type="city-name"]');
 
     // Элемент списка городов по букве
-    const newCityList = document.createElement('div');
-    newCityList.classList.add('flex-col', 'city__select__col', 'mb24');
 
     const cityTag = document.createElement('div');
     cityTag.classList.add('black-text', 'head-text', 'mb12');
@@ -220,43 +217,71 @@ function citySearch(popup) {
             contentContainer.removeChild(contentContainer.firstChild);
         }
 
-        while (cityList.firstChild) {
-            cityList.removeChild(cityList.firstChild);
-        }
-
         // Фильтруем города по введенному значению
         let result = arr.filter((el) =>
             el.innerHTML.toLowerCase().includes(search.value.toLowerCase())
         );
 
-        let list = contentContainer.appendChild(newCityList);
 
-        while (list.firstChild) {
-            list.removeChild(list.firstChild);
-        }
+        // let cities = result.filter((el) => {
+        //     to
+        // })
+
+        // Убираем дубли
+        let cities = result.filter((item, pos) =>  result.indexOf(item) == pos)
+
+        console.log(cities);
 
         // Строим выдачу (расставляем каждый элемент)
-        result.forEach((elem) => {
+        cities.forEach((elem) => {
+            const newCityList = document.createElement('div');
+            newCityList.classList.add('flex-col', 'city__select__col', 'mb24');
+
+            const city = document.createElement('a');
+            city.classList.add('a-blue-hover');
+
             // Отображение популярных городов
+            if (elem.dataset.popularCity == 't') {
+                const popularList = contentContainer.querySelector(
+                    'div[data-city-list="popular"]'
+                );
 
-            // if(elem.dataset.popularCity == "t") {
-            //     let popularList = contentContainer.appendChild(newCityList);
-            //     popularList.appendChild(elem);
-            // } else {
-            // Отображение остальных
+                
 
-            let inner = elem.innerHTML;
-            let toDel = 'г. ';
-            let cityName = inner.replace(toDel, '');
+                if (popularList) {
+                    popularList.appendChild(elem);
+                } else {
+                    cityTag.innerHTML = 'Популярные города';
+                    newCityList.dataset.cityList = 'popular';
+                    newCityList.append(cityTag, elem);
+                    contentContainer.appendChild(newCityList);
+                }
+            } else {
+                // Отображение остальных
+                // Находим первую букву
+                let inner = elem.innerHTML;
+                let toDel = 'г. ';
+                let cityName = inner.replace(toDel, '');
+                let first = cityName.charAt(0);
 
-            let first = cityName.charAt(0);
-            cityTag.innerHTML = first;
+                // Создаем элемент списка с буквой
+                const cityList = contentContainer.querySelector(`div[data-city-list="${first}"]`);
+                
+                // Проверка на наличие уже такого списка
+                if(cityList) {
+                    cityList.appendChild(elem);
+                } else {
+                    // Создание нового списка
+                    const cityTag = document.createElement('div');
+                    cityTag.classList.add('black-text', 'head-text', 'mb12');
 
-            list.appendChild(cityTag);
+                    newCityList.dataset.cityList = first;
+                    cityTag.innerHTML = first;
+                    newCityList.append(cityTag, elem);
+                    contentContainer.append(newCityList);
+                }
 
-            list.appendChild(elem);
-
-            // }
+            }
         });
     });
 }
