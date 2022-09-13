@@ -218,6 +218,7 @@ function citySearch(popup) {
         }
 
         // Фильтруем города по введенному значению
+        console.log(search.value);
         let result = arr.filter((el) =>
             el.innerHTML.toLowerCase().includes(search.value.toLowerCase())
         );
@@ -239,7 +240,6 @@ function citySearch(popup) {
 
         // Убираем дубли
         let cities = sortArr.filter((item, pos) => {
-            console.log(pos);
             let i = 1;
             if (pos > 0) {
                 if (item.innerHTML == sortArr[pos - i].innerHTML) {
