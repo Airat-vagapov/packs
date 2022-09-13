@@ -222,23 +222,41 @@ function citySearch(popup) {
             el.innerHTML.toLowerCase().includes(search.value.toLowerCase())
         );
 
-
         // let cities = result.filter((el) => {
         //     to
         // })
 
-        // Убираем дубли
-        let cities = result.filter((item, pos) =>  result.indexOf(item) == pos)
+        // Сортируем по алфавиту
+        let sortArr = result.sort((a, b) => {
+            if (a.innerHTML > b.innerHTML) {
+                return 1;
+            }
+            if (a.innerHTML < b.innerHTML) {
+                return -1;
+            }
+            return 0;
+        });
 
-        console.log(cities);
+        // Убираем дубли
+        let cities = sortArr.filter((item, pos) => {
+            console.log(pos);
+            let i = 1;
+            if (pos > 0) {
+                if (item.innerHTML == sortArr[pos - i].innerHTML) {
+                    i++;
+                    return false;
+                } else {
+                    return true;
+                }
+            } else {
+                return true;
+            }
+        });
 
         // Строим выдачу (расставляем каждый элемент)
         cities.forEach((elem) => {
             const newCityList = document.createElement('div');
             newCityList.classList.add('flex-col', 'city__select__col', 'mb24');
-
-            const city = document.createElement('a');
-            city.classList.add('a-blue-hover');
 
             // Отображение популярных городов
             if (elem.dataset.popularCity == 't') {
@@ -246,15 +264,16 @@ function citySearch(popup) {
                     'div[data-city-list="popular"]'
                 );
 
-                
-
                 if (popularList) {
                     popularList.appendChild(elem);
                 } else {
                     cityTag.innerHTML = 'Популярные города';
                     newCityList.dataset.cityList = 'popular';
                     newCityList.append(cityTag, elem);
-                    contentContainer.appendChild(newCityList);
+
+                    const beforeElem =
+                        contentContainer.querySelector('.city__select__col');
+                    contentContainer.insertBefore(newCityList, beforeElem);
                 }
             } else {
                 // Отображение остальных
@@ -265,13 +284,16 @@ function citySearch(popup) {
                 let first = cityName.charAt(0);
 
                 // Создаем элемент списка с буквой
-                const cityList = contentContainer.querySelector(`div[data-city-list="${first}"]`);
-                
+                const cityList = contentContainer.querySelector(
+                    `div[data-city-list="${first}"]`
+                );
+
                 // Проверка на наличие уже такого списка
-                if(cityList) {
+                if (cityList) {
                     cityList.appendChild(elem);
                 } else {
                     // Создание нового списка
+                    // Буква списка
                     const cityTag = document.createElement('div');
                     cityTag.classList.add('black-text', 'head-text', 'mb12');
 
@@ -280,7 +302,6 @@ function citySearch(popup) {
                     newCityList.append(cityTag, elem);
                     contentContainer.append(newCityList);
                 }
-
             }
         });
     });
