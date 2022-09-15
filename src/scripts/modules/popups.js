@@ -193,39 +193,32 @@ function getActivePopup() {
     return result;
 }
 
-// Поиск города в попапе
+// Поиск города в попапе выбора города
 function citySearch(popup) {
     const container = popup.popupContainer;
     const contentContainer = container.querySelector('.popup-content');
-    // const cityList = container.querySelector('.city__select__col');
     const cityListTag = container.querySelector('[data-type="city-tag"]');
     const search = container.querySelector('[data-type="city-search"]');
     const content = container.querySelectorAll('[data-type="city-name"]');
+    const error = container.querySelector('[data-type="city-search-error"]');
 
-    // Элемент списка городов по букве
-
+    // Элемент списка городов по букве (контейнер)
     const cityTag = document.createElement('div');
     cityTag.classList.add('black-text', 'head-text', 'mb12');
 
     let arr = Array.from(content);
 
     search.addEventListener('keyup', () => {
-        // content.forEach((item) => {item.remove()});
-
         // Удаляем все элементы в контенте попапа
         while (contentContainer.firstChild) {
             contentContainer.removeChild(contentContainer.firstChild);
         }
 
+        console.log(error);
         // Фильтруем города по введенному значению
-        console.log(search.value);
         let result = arr.filter((el) =>
             el.innerHTML.toLowerCase().includes(search.value.toLowerCase())
         );
-
-        // let cities = result.filter((el) => {
-        //     to
-        // })
 
         // Сортируем по алфавиту
         let sortArr = result.sort((a, b) => {
@@ -253,8 +246,15 @@ function citySearch(popup) {
             }
         });
 
+        if (cities.length == 0) {
+            // Отображаем ошибку
+            contentContainer.appendChild(error);
+            activate(error);
+        }
+
         // Строим выдачу (расставляем каждый элемент)
         cities.forEach((elem) => {
+            // Новый контейнер для городов по букве
             const newCityList = document.createElement('div');
             newCityList.classList.add('flex-col', 'city__select__col', 'mb24');
 
@@ -297,6 +297,7 @@ function citySearch(popup) {
                     const cityTag = document.createElement('div');
                     cityTag.classList.add('black-text', 'head-text', 'mb12');
 
+                    // Формирование элементов
                     newCityList.dataset.cityList = first;
                     cityTag.innerHTML = first;
                     newCityList.append(cityTag, elem);
