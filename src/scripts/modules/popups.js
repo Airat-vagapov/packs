@@ -52,12 +52,18 @@ class Popup {
                     // Активация таба Вход
                     activateTabByName(this.popupContainer, 'login');
                 }
+
+                if(this.name == 'citySelect') {
+                    showCities(this);
+                }
             });
         });
     }
 
     closePopup() {
+        disable(this.popupContainer);
         const btn = document.querySelectorAll('.popup-close');
+        
 
         // Закрытие по кнопке «закрыть» (крестик)
         btn.forEach((btn) => {
@@ -65,17 +71,19 @@ class Popup {
                 disable(this.popupContainer);
 
                 // Закрытие success/error
-                if (
-                    this.success.classList.contains('active') ||
-                    this.error.classList.contains('active')
-                ) {
-                    disable(this.success);
-                    disable(this.error);
+                if(this.success || this.error) {
+                    if (
+                        this.success.classList.contains('active') ||
+                        this.error.classList.contains('active')
+                    ) {
+                        disable(this.success);
+                        disable(this.error);
+                    }
                 }
 
                 // Сброс активности форм на попапе логина
-                closeTabContent(this.popupContainer);
-                deactivateAllTabs(this.popupContainer);
+                setTimeout(closeTabContent, 300, this.popupContainer);
+                setTimeout(deactivateAllTabs, 300, this.popupContainer);
             });
         });
 
@@ -95,10 +103,12 @@ class Popup {
         document.addEventListener('keydown', (e) => {
             if (e.key == 'Escape') {
                 disable(this.popupContainer);
-                disable(this.success);
-                disable(this.error);
-                closeTabContent(this.popupContainer);
-                deactivateAllTabs(this.popupContainer);
+                if(this.success || this.error) {
+                    disable(this.success);
+                    disable(this.error);
+                }
+                setTimeout(closeTabContent, 300, this.popupContainer);
+                setTimeout(deactivateAllTabs, 300, this.popupContainer);
             }
         });
 
@@ -182,6 +192,7 @@ function citySearch(popup) {
     const search = container.querySelector('[data-type="city-search"]');
     const content = container.querySelectorAll('[data-type="city-name"]');
     const error = container.querySelector('[data-type="city-search-error"]');
+    
 
     // Элемент списка городов по букве (контейнер)
     const cityTag = document.createElement('div');
@@ -194,8 +205,6 @@ function citySearch(popup) {
         while (contentContainer.firstChild) {
             contentContainer.removeChild(contentContainer.firstChild);
         }
-
-        console.log(error);
         // Фильтруем города по введенному значению
         let result = arr.filter((el) =>
             el.innerHTML.toLowerCase().includes(search.value.toLowerCase())
@@ -286,7 +295,30 @@ function citySearch(popup) {
                 }
             }
         });
-    });
-}
 
+    });
+    const cityOnHead = document.querySelector('[data-type="city"]');
+        content.forEach((city) => {
+            city.addEventListener('click', () => {
+                let value = city.innerHTML;
+                cityOnHead.innerHTML = value;
+                popup.closePopup();
+            });
+            
+        })
+}
 citySearch(citySelect);
+
+function showCities (popup) {
+
+    const container = popup.popupContainer;
+    const contentContainer = container.querySelector('.city__select__content')
+    const content = container.querySelectorAll('.city__select__col');
+    const error = container.querySelector('.popup__error__contaner');
+
+    console.log(content);
+    content.forEach((item) => {
+        contentContainer.appendChild(item);
+    });
+    contentContainer.appendChild(error);
+}
