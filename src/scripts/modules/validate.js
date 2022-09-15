@@ -88,6 +88,7 @@ function formValidate(form) {
 // Инпуты
 let inputs = document.querySelectorAll('input');
 
+function autoChange(inputs) {
 inputs.forEach((item) => {
 // Автозамена на кирилицу
     if (item.dataset.lang == 'ru') {
@@ -168,8 +169,9 @@ inputs.forEach((item) => {
             item.value = result;
         });
     }
-})
-
+});
+}
+autoChange(inputs);
 
 
 

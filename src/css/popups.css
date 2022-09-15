@@ -69,6 +69,21 @@
     flex-wrap: nowrap;
 }
 
+.popup__error__contaner {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    opacity: 0;
+    transition: all .3s linear;
+    pointer-events: none;
+}
+
+.popup__error__contaner.active {
+    opacity: 1;
+    transition: all .3s linear;
+    pointer-events: none;
+}
+
 
 
 
