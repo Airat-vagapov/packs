@@ -87,17 +87,6 @@ class Popup {
             popupFade.forEach((item) => {
                 if (target == item) {
                     disable(item.parentElement);
-
-                    // Убираем активность с формы логина
-                    // const loginByPhone = item.parentElement.querySelector(
-                    //     'form[data-login="byPhone"]'
-                    // );
-                    // if (item.parentElement.contains(loginByPhone)) {
-                    //     setTimeout(disable, 300, loginByPhone);
-                    // }
-
-                    // closeTabContent(this.popupContainer);
-                    // deactivateAllTabs(this.popupContainer);
                 }
             });
         });
@@ -106,14 +95,6 @@ class Popup {
         document.addEventListener('keydown', (e) => {
             if (e.key == 'Escape') {
                 disable(this.popupContainer);
-                // Убираем активность с формы логина
-                // const loginByPhone = this.popupContainer.querySelector(
-                //     'form[data-login="byPhone"]'
-                // );
-                // if (this.popupContainer.contains(loginByPhone)) {
-                //     setTimeout(disable, 300, loginByPhone);
-                // }
-
                 disable(this.success);
                 disable(this.error);
                 closeTabContent(this.popupContainer);
