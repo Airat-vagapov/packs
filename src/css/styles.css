@@ -393,12 +393,16 @@
     right: 24px;
 }
 
+.main-menu-item {
+    border-bottom: none;
+    border-bottom: 1px solid #ddd;
+}
+
 .main-menu-elt {
     display: flex;
     align-items: center;
     padding: 12px 24px;
     position: relative;
-    border-bottom: 1px solid #ddd;
     color: #000;
 }
 
@@ -422,7 +426,7 @@
 }
 
 .main-menu-elt:last-child {
-    border-bottom: none;
+    
 }
 
 .banner-and-tabs {
