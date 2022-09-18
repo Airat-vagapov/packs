@@ -1,3 +1,6 @@
+// Получение города по IP
+
+
 // Поиск города в попапе выбора города
 function citySearch(popup) {
     const container = popup.popupContainer;
@@ -19,7 +22,6 @@ function citySearch(popup) {
             contentContainer.removeChild(contentContainer.firstChild);
         }
 
-        console.log(error);
         // Фильтруем города по введенному значению
         let result = arr.filter((el) =>
             el.innerHTML.toLowerCase().includes(search.value.toLowerCase())
@@ -110,8 +112,19 @@ function citySearch(popup) {
                 }
             }
         });
+
+        
     });
-}
+
+    const cityOnHead = document.querySelector('[data-type="city"]');
+    content.forEach((city) => {
+        city.addEventListener('click', () => {
+            let value = city.innerHTML;
+            cityOnHead.innerHTML = value;
+            popup.closePopup();
+        });
+    });
+};
 
 citySearch(citySelect);
 
@@ -122,7 +135,6 @@ function showCities (popup) {
     const content = container.querySelectorAll('.city__select__col');
     const error = container.querySelector('.popup__error__contaner');
 
-    console.log(content);
     content.forEach((item) => {
         contentContainer.appendChild(item);
     });
