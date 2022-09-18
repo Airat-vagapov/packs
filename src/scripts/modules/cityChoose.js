@@ -116,6 +116,7 @@ function citySearch(popup) {
         
     });
 
+    // Выбор города по клику
     const cityOnHead = document.querySelector('[data-type="city"]');
     content.forEach((city) => {
         city.addEventListener('click', () => {
@@ -128,6 +129,8 @@ function citySearch(popup) {
 
 citySearch(citySelect);
 
+
+// Выстраивание контента для попапа города (при первом открытии) 
 function showCities (popup) {
 
     const container = popup.popupContainer;
