@@ -1,5 +1,51 @@
-// Получение города по IP
+// Подставляем город по IP
+const userCity = (ip) => {
+    ip.then((ip) => {
+        let url =
+            'https://suggestions.dadata.ru/suggestions/api/4_1/rs/iplocate/address?ip=';
+        let token = '115230963031bbf7ed762698d1932584cf0d2078';
+        let query = ip;
 
+        let options = {
+            method: 'GET',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json',
+                Authorization: 'Token ' + token,
+            },
+        };
+
+        fetch(url + query, options)
+            .then((response) => response.json())
+            .then((data) => {
+                let cityByIp = data.location.data.city;
+                const myCity = document.querySelectorAll(
+                    '[data-type="my_city"]'
+                );
+
+                myCity.forEach((city) => {
+                    city.innerHTML = cityByIp;
+                });
+            })
+            .then(() => {
+                // Открытие подтверждения города
+                let citySubmitPopup = document.querySelector(
+                    '.city-submit-window'
+                );
+                document.addEventListener(
+                    'DOMContentLoaded',
+                    () => {
+                        activate(citySubmitPopup);
+                    },
+                    { once: true }
+                );
+            })
+            .catch((error) => console.log('error', error));
+    });
+};
+
+userCity(getUserIp());
 
 // Поиск города в попапе выбора города
 function citySearch(popup) {
@@ -112,12 +158,10 @@ function citySearch(popup) {
                 }
             }
         });
-
-        
     });
 
     // Выбор города по клику
-    const cityOnHead = document.querySelector('[data-type="city"]');
+    const cityOnHead = document.querySelector('[data-type="my_city"]');
     content.forEach((city) => {
         city.addEventListener('click', () => {
             let value = city.innerHTML;
@@ -125,16 +169,14 @@ function citySearch(popup) {
             popup.closePopup();
         });
     });
-};
+}
 
 citySearch(citySelect);
 
-
-// Выстраивание контента для попапа города (при первом открытии) 
-function showCities (popup) {
-
+// Выстраивание контента для попапа города (при первом открытии)
+function showCities(popup) {
     const container = popup.popupContainer;
-    const contentContainer = container.querySelector('.city__select__content')
+    const contentContainer = container.querySelector('.city__select__content');
     const content = container.querySelectorAll('.city__select__col');
     const error = container.querySelector('.popup__error__contaner');
 
@@ -143,4 +185,3 @@ function showCities (popup) {
     });
     contentContainer.appendChild(error);
 }
-

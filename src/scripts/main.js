@@ -20,15 +20,6 @@ function removeDisableClass(elem) {
 function removeClass(elem, className) {
     elem.classList.remove(className);
 }
-// // Открытие подтверждения города
-let citySubmitPopup = document.querySelector('.city-submit-window');
-document.addEventListener(
-    'DOMContentLoaded',
-    () => {
-        activate(citySubmitPopup);
-    },
-    { once: true }
-);
 
 // Закрытие окна подтверждения города
 let closeBtn = citySubmitPopup.querySelector('.submit-close');
@@ -110,19 +101,13 @@ function removeElems(container) {
 }
 
 // Получить IP адрес юзера
-const getUserIp = async () => {
+const getUserIp = () => {
     return new Promise((resolve, reject) => {
         fetch('https://api.ipify.org?format=json')
             .then((response) => response.json())
             .then((data) => {
                 resolve(data.ip);
             })
-            .catch(console.log('error'));
+            .catch(() => console.log('error'));
     });
 };
-
-// Получаем город по IP
-const getCityByIp = (ip) => {
-    ip.then((ip) => console.log(ip));
-};
-getCityByIp(getUserIp());
