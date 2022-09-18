@@ -22,6 +22,9 @@ function removeClass(elem, className) {
 }
 
 // Закрытие окна подтверждения города
+let citySubmitPopup = document.querySelector(
+    '.city-submit-window'
+);
 let closeBtn = citySubmitPopup.querySelector('.submit-close');
 closeBtn.addEventListener('click', () => {
     disable(citySubmitPopup);
@@ -101,7 +104,7 @@ function removeElems(container) {
 }
 
 // Получить IP адрес юзера
-const getUserIp = () => {
+const getUserIp = async () => {
     return new Promise((resolve, reject) => {
         fetch('https://api.ipify.org?format=json')
             .then((response) => response.json())

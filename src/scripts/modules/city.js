@@ -33,13 +33,7 @@ const userCity = (ip) => {
                 let citySubmitPopup = document.querySelector(
                     '.city-submit-window'
                 );
-                document.addEventListener(
-                    'DOMContentLoaded',
-                    () => {
-                        activate(citySubmitPopup);
-                    },
-                    { once: true }
-                );
+                activate(citySubmitPopup);
             })
             .catch((error) => console.log('error', error));
     });
