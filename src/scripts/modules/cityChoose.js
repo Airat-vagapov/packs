@@ -1,3 +1,4 @@
+// Поиск города в попапе выбора города
 function citySearch(popup) {
     const container = popup.popupContainer;
     const contentContainer = container.querySelector('.popup-content');
@@ -113,4 +114,18 @@ function citySearch(popup) {
 }
 
 citySearch(citySelect);
+
+function showCities (popup) {
+
+    const container = popup.popupContainer;
+    const contentContainer = container.querySelector('.city__select__content')
+    const content = container.querySelectorAll('.city__select__col');
+    const error = container.querySelector('.popup__error__contaner');
+
+    console.log(content);
+    content.forEach((item) => {
+        contentContainer.appendChild(item);
+    });
+    contentContainer.appendChild(error);
+}
 
