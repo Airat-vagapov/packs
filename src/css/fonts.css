@@ -461,7 +461,7 @@
 }
 .icon-drop:before {
   content: "\e943";
-  color: #939393;
+  /* color: #939393; */
 }
 .icon-fire:before {
   content: "\e944";
