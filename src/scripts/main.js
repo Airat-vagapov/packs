@@ -30,27 +30,6 @@ closeBtn.addEventListener('click', () => {
     disable(citySubmitPopup);
 });
 
-// Выбор раздела в верхней шапке
-const headLeftMenu = document.querySelector('.menu_left'),
-    menuPoint = headLeftMenu.querySelectorAll('.menu_drop');
-
-// Всплывающие подменю в шапке сайта
-openHideMenu(menuPoint);
-function openHideMenu(elem) {
-    elem.forEach((item) => {
-        const dropMenu = item.querySelector('.menu_drop_container');
-        item.addEventListener('mouseenter', (e) => {
-            if (item.classList.contains('drop-active')) {
-                activate(dropMenu);
-            }
-        });
-
-        item.addEventListener('mouseleave', () => {
-            disable(dropMenu);
-        });
-    });
-}
-
 // Настройка чекбокса
 const checkbox = document.querySelectorAll('.checkbox');
 checkbox.forEach((item) => {

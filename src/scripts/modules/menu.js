@@ -1,7 +1,9 @@
+
+
+// Всплывающие подменю в шапке сайта
 const headLeftMenu = document.querySelector('.menu_left'),
     menuPoint = headLeftMenu.querySelectorAll('.menu_drop');
 
-// Всплывающие подменю в шапке сайта
 openHideMenu(menuPoint);
 function openHideMenu(elem) {
     elem.forEach((item) => {
@@ -17,4 +19,25 @@ function openHideMenu(elem) {
         });
     });
 }
+
+// Меню каталога
+const catalogMenu = document.querySelector('.catalog-menu');
+const menuEl = catalogMenu.querySelectorAll('.main-menu__item');
+
+// Вывод подменю
+menuEl.forEach((menu) => {
+    const submenu = menu.querySelector('.submenu');
+    if(submenu) {
+        menu.addEventListener('mouseenter', () => {
+            activate(submenu);
+        })
+        menu.addEventListener('mouseleave', () => {
+            disable(submenu);
+        })
+    } else {
+        const icon = menu.querySelector('.icon-drop');
+        icon.remove();
+    }
+})
+
 
