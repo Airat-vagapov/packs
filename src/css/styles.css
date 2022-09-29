@@ -469,18 +469,17 @@
 
 .banner-and-tabs {
     overflow: hidden;
+    position: relative;
 }
 
-.banner {
-    display: flex;
-    background-color: #eeeef2;
-    border-radius: 2px;
-    height: 318px;
+.carousel {
+position: relative;
 }
 
-.banner-left {
-    padding: 32px;
-    flex-basis: 50%;
+.nav-icons-container {
+    position: absolute;
+    left: 32px;
+    top: 32px;
 }
 
 .nav-icons {
@@ -520,6 +519,18 @@
     -webkit-transition: all 0.4s ease-in;
     -o-transition: all 0.4s ease-in;
     transition: all 0.4s ease-in;
+}
+
+.banner {
+    display: flex;
+    background-color: #eeeef2;
+    border-radius: 2px;
+    height: 318px;
+}
+
+.banner-left {
+    padding: 64px 32px 32px 32px;
+    flex-basis: 50%;
 }
 
 .banner-text {
@@ -598,11 +609,6 @@
     display: none;
 }
 
-.banner-img {
-    /*position: relative;
-	top: 18px;*/
-}
-
 .banner-tabs {
     display: flex;
     justify-content: space-between;
@@ -621,6 +627,7 @@
     align-items: center;
     border-radius: 2px;
     height: 100%;
+    cursor: pointer;
 }
 
 .banner-tab:hover {

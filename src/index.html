@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/media.css">
     <link rel="stylesheet" href="css/popups.css">
+    <link rel="stylesheet" type="text/css" href="css/vendor/glider.css">
 
 </head>
 
@@ -468,18 +469,9 @@
 
             </div>
             <div class="banner-and-tabs">
-                <div class="banner-scroll">
-
+                <div class="carousel">
                     <div class="banner mb20">
                         <div class="banner-left">
-                            <div class="nav-icons">
-                                <div class="arrow-prev ">
-                                    <span class="icon-return"></span>
-                                </div>
-                                <div class="arrow-fwd bne">
-                                    <span class="icon-return-copy"></span>
-                                </div>
-                            </div>
                             <div class="banner-text">
                                 <p>Кресло офисное BRABIX «Space EX-508»</p>
                             </div>
@@ -504,51 +496,55 @@
                             <img class="banner-img-mobile" src="assets/img/chair-mobile.png">
                         </div>
                     </div>
-                    <!-- <div class="banner mb20">
-                            <div class="banner-left">
-                                <div class="nav-icons">
-                                    <div class="arrow-prev">
-                                        <span class="icon-return"></span>
-                                    </div>
-                                    <div class="arrow-fwd">
-                                        <span class="icon-return-copy"></span>
-                                    </div>
-                                </div>
-                                <div class="banner-text">
-                                    <p>Кресло офисное BRABIX «Space EX-508»</p>
-                                </div>
-                                <div class="banner-subtext">
-                                    <p>экокожа, хром, черное</p>
-                                </div>
-                                <div class="banner-price mb4">
-                                    <p class="banner-price-sum">12 320</p>
-                                    <span class="icon-ruble banner-price-symb"></span>
-                                </div>
-                                <div class="banner-price-subtext">
-                                    Покупка от 3 шт. доставка по всей России
-                                </div>
-                                <div class="banner-btn-container">
-                                    <div class="banner-btn">
-                                        <a href="/" class="banner-btn-text">В корзину</a>
-                                    </div>
+                    <div class="banner mb20">
+                        <div class="banner-left">
+                            <div class="banner-text">
+                                <p>Кресло офисное BRABIX «Space EX-508»</p>
+                            </div>
+                            <div class="banner-subtext">
+                                <p>экокожа, хром, черное</p>
+                            </div>
+                            <div class="banner-price mb4">
+                                <p class="banner-price-sum">12 320</p>
+                                <span class="icon-ruble banner-price-symb"></span>
+                            </div>
+                            <div class="banner-price-subtext">
+                                Покупка от 3 шт. доставка по всей России
+                            </div>
+                            <div class="banner-btn-container">
+                                <div class="banner-btn">
+                                    <a href="/" class="banner-btn-text">В корзину</a>
                                 </div>
                             </div>
-                            <div class="banner-right">
-                                <img class="banner-img" src="assets/img/chair-banner.png">
-                                <img class="banner-img-mobile" src="assets/img/chair-mobile.png">
-                            </div>
-                        </div> -->
+                        </div>
+                        <div class="banner-right">
+                            <img class="banner-img" src="assets/img/chair-banner.png">
+                            <img class="banner-img-mobile" src="assets/img/chair-mobile.png">
+                        </div>
+                    </div>
 
                 </div>
+                <div data-slider-nav="banner" class="nav-icons-container">
+                    <div class="nav-icons">
+                        <div class="arrow-prev banner-prev">
+                            <span class="icon-return"></span>
+                        </div>
+                        <div class="arrow-fwd banner-fwd">
+                            <span class="icon-return-copy"></span>
+                        </div>
+                    </div>
+                </div>
+
+
                 <div class="banner-tabs">
                     <div class="banner-tabs-col">
                         <div class="banner-tab">
                             <div class="banner-tab-img">
                                 <img src="assets/img/tab-bag.png">
                             </div>
-                            <div class="banner-tab-text">
+                            <a href="/" class="banner-tab-text">
                                 Изготовление пакетов с логотипом
-                            </div>
+                            </a>
                         </div>
                     </div>
                     <div class="banner-tabs-col">
@@ -556,7 +552,7 @@
                             <div class="banner-tab-img">
                                 <img src="assets/img/tab-tape.png">
                             </div>
-                            <p class="banner-tab-text">Изготовление скотча с логотипом</p>
+                            <a class="banner-tab-text">Изготовление скотча с логотипом</a>
                         </div>
                     </div>
                     <div class="banner-tabs-col">
@@ -564,11 +560,12 @@
                             <div class="banner-tab-img">
                                 <img src="assets/img/tab-box-open.png">
                             </div>
-                            <div class="banner-tab-text">
+                            <a class="banner-tab-text">
                                 Изготовление гофрокоробок
-                            </div>
+                            </a>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -3213,7 +3210,9 @@
 
 
     <script src="https://unpkg.com/imask"></script>
+    <script src="scripts/vendor/glider.js"></script>
     <script type="text/javascript" src="scripts/main.js"></script>
+    <script type="text/javascript" src="scripts/modules/carousel.js"></script>
     <script type="text/javascript" src="scripts/modules/menu.js"></script>
     <script type="text/javascript" src="scripts/modules/radioButtons.js"></script>
     <script type="text/javascript" src="scripts/modules/validate.js"></script>

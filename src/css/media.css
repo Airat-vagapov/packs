@@ -345,6 +345,10 @@
 		width: 100%;
 	}
 
+	[data-slider-nav="banner"] {
+		display: none;
+	}
+
 	.banner {
 		height: auto;
 	}
@@ -437,7 +441,7 @@
 		width: 75px;
 	}
 
-	..item-card-buy-btn {
+	.item-card-buy-btn {
 		justify-content: center;
 	}
 
