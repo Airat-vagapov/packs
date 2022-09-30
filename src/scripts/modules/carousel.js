@@ -1,5 +1,5 @@
 // Баннер
-let banner = document.querySelector('.splide');
+let banner = document.querySelector('.banner-carousel');
 let bannerCarousel = new Splide(banner, {
   type: 'loop',
   prePage: 1,
