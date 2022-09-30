@@ -16,6 +16,10 @@ ul {
     opacity: 1;
 }
 
+.scroll__active {
+    display: flex;
+}
+
 .flex-col {
     display: flex;
     flex-direction: column;

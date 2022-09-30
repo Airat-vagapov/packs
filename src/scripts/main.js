@@ -7,6 +7,12 @@ const activeClassName = 'active',
 function activate(elem) {
     elem.classList.add(activeClassName);
 }
+
+// Активация для скролла
+function scrollActivate(elem) {
+    elem.classList.add('.scroll__active')
+}
+
 // Убираем класс active (display: flex)
 function disable(elem) {
     elem.classList.remove(activeClassName);
