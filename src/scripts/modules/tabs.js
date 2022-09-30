@@ -26,7 +26,6 @@ tabBlock.forEach((item) => {
                 `.tab-content[data-tab-type = "${tabType}"]`
             );
             activate(activeTabContent);
-            scrollActivate(activeTabContent);
         }
 
         // Переключение таба

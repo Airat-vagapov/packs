@@ -1,5 +1,5 @@
 // Баннер
-let banner = document.querySelector('.banner-carousel');
+let banner = document.querySelector('[data-carousel="banner"]');
 let bannerCarousel = new Splide(banner, {
   type: 'loop',
   prePage: 1,
@@ -11,3 +11,10 @@ let bannerCarousel = new Splide(banner, {
 });
 bannerCarousel.mount();
 
+let itemsCarousel = document.querySelectorAll('.items-carousel')
+itemsCarousel.forEach((item) => {
+  let itemCarousel = new Splide(item, {
+    type: 'loop'
+  });
+  itemCarousel.mount();
+})
