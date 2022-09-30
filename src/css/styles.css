@@ -397,6 +397,7 @@
     opacity: 0;
     transition: all 0.3s;
     pointer-events: none;
+    z-index: 100;
 }
 
 .submenu.active {
@@ -717,10 +718,11 @@ position: relative;
 /*Карточка товара*/
 
 .items-scroll-x {
-    display: flex;
+    /* display: flex;
     overflow: auto;
     margin-right: -10px;
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: x mandatory; */
+    margin-bottom: 24px;
 }
 
 .items-scroll-mobile {

@@ -93,6 +93,7 @@
   justify-content: center;
   margin: 0 auto;
   padding: 0;
+  margin-bottom: 24px;
 }
 .glider-dot {
   border: 0;
@@ -103,15 +104,20 @@
   cursor: pointer;
   color: #ccc;
   border-radius: 999px;
-  background: #ccc;
-  width: 12px;
+  /* background: #ccc; */
+  /* width: 12px;
   height: 12px;
-  margin: 7px;
+  margin: 7px; */
+  background-color: #eeeef2;
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  margin-right: 12px;
 }
 .glider-dot:hover,
 .glider-dot:focus,
 .glider-dot.active {
-  background: #a89cc8;
+  background: #3b52f5;
 }
 @media(max-width: 36em){
   .glider::-webkit-scrollbar {

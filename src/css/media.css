@@ -77,26 +77,10 @@
 	}
 
 	/*СКРОЛЛ ТОВАРОВ*/
-	 .items-scroll-x {
-	 	display: none;
-
-	 }
-
-	 .items-scroll-x-mobile {
+	 /* .items-scroll-x {
 	 	display: flex;
-	 	overflow: auto;
-	 }
 
-	 .items-scroll-mobile {
-		display: flex;
-	    margin-bottom: 24px;
-	    margin-right: 10px;
-	    margin-left: -10px;
-	    min-width: 100%;
-	 	overflow-x: scroll;
-	 	scroll-snap-type: x mandatory;
-	 	overflow-y: hidden;
-	 }
+	 } */
 
 	 .items-scroll-col {
 	 	max-width: 35%;
