@@ -9,7 +9,8 @@ function activate(elem) {
     elem.classList.add(activeClassName);
     anime({
         targets: elem,
-        opacity: 1
+        opacity: 1,
+        delay: .3
     });
 }
 

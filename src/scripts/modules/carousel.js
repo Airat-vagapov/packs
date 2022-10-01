@@ -17,7 +17,7 @@ let itemsCarousel = document.querySelectorAll('.items-carousel');
 itemsCarousel.forEach((item) => {
     let itemCarousel = new Splide(item, {
         type: 'loop',
-        perPage : 1,
+        perPage : 5,
         perMove: 1,
         focus: 0,
         classes: {
