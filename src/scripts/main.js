@@ -5,13 +5,13 @@ const activeClassName = 'active',
 
 // Добавление класса active (display: flex)
 function activate(elem) {
-    
     elem.classList.add(activeClassName);
     anime({
         targets: elem,
         opacity: 1,
-        delay: .3
+
     });
+    
 }
 
 // Активация для скролла

@@ -5,6 +5,7 @@ const tabs = () => {
 const tabBlock = document.querySelectorAll('.tabs-block');
 
 tabBlock.forEach((item) => {
+    const tabBlockType = item.dataset.tab;
     const tabLine = item.querySelector('.tabline');
     const firstTab = item.querySelector('.tab');
 
@@ -41,8 +42,10 @@ tabBlock.forEach((item) => {
                 });
                 // Убираем активность у контента таба
                 let tabContents = document.querySelectorAll('.tab-content');
-                tabContents.forEach((tab) => {
-                    disable(tab);
+                tabContents.forEach((tabCont) => {
+                    if(tabCont.dataset.tab == tabBlockType) {
+                        disable(tabCont);
+                    }
                 });
 
                 // Подчеркивание выбранного таба
