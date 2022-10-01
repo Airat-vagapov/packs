@@ -1,20 +1,46 @@
 // Баннер
 let banner = document.querySelector('[data-carousel="banner"]');
 let bannerCarousel = new Splide(banner, {
-  type: 'loop',
-  prePage: 1,
-  focus  : 0,
-  classes: {
-    pagination: 'splide__pagination pagination',
-    page: 'splide__pagination__page pagination-item'
-  }
+    type: 'loop',
+    prePage: 1,
+    focus: 0,
+    classes: {
+        pagination: 'splide__pagination pagination',
+        page: 'splide__pagination__page pagination-item',
+    },
 });
 bannerCarousel.mount();
 
-let itemsCarousel = document.querySelectorAll('.items-carousel')
+// Специальные предложения
+let itemsCarousel = document.querySelectorAll('.items-carousel');
 itemsCarousel.forEach((item) => {
-  let itemCarousel = new Splide(item, {
-    type: 'loop'
-  });
-  itemCarousel.mount();
-})
+    let itemCarousel = new Splide(item, {
+        type: 'loop',
+        classes: {
+            pagination: 'splide__pagination pagination-block',
+            page: 'splide__pagination__page pagination-item',
+            arrows: 'splide__arrows hidden items__arrows__hidden',
+        },
+    });
+    itemCarousel.mount();
+
+    // Клик для прокрутки
+    let itemsArrows = document.querySelector('[data-arrows="items"]');
+    let itemArrowFwd = itemsArrows.querySelector('.items-fwd');
+    let itemArrowPrev = itemsArrows.querySelector('.items-prev');
+
+    let hiddenItemsArrows = document.querySelectorAll('.items__arrows__hidden');
+
+    hiddenItemsArrows.forEach((arrows) => {
+        itemArrowFwd.addEventListener('click', () => {
+            arrows.querySelectorAll('.splide__arrow--next').forEach((arw) => {
+                arw.click();
+            });
+        });
+        itemArrowPrev.addEventListener('click', () => {
+            arrows.querySelectorAll('.splide__arrow--prev').forEach((arw) => {
+                arw.click();
+            });
+        });
+    });
+});

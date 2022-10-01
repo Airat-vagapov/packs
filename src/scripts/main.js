@@ -5,7 +5,12 @@ const activeClassName = 'active',
 
 // Добавление класса active (display: flex)
 function activate(elem) {
+    
     elem.classList.add(activeClassName);
+    anime({
+        targets: elem,
+        opacity: 1
+    });
 }
 
 // Активация для скролла
@@ -16,6 +21,11 @@ function scrollActivate(elem) {
 // Убираем класс active (display: flex)
 function disable(elem) {
     elem.classList.remove(activeClassName);
+    anime({
+        targets: elem,
+        opacity: 0,
+        delay: .3
+    });
 }
 // Убираем класс disable
 function removeDisableClass(elem) {

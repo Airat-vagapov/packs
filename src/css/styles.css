@@ -1063,6 +1063,14 @@ position: relative;
     color: #fff;
 }
 
+.pagination-block {
+    display: flex!important;
+    position: relative!important;
+    align-items: center!important;
+    justify-content: center!important;
+    margin-top: 24px!important;
+}
+
 .pagination {
     display: flex!important;
     align-items: center!important;
@@ -1071,10 +1079,11 @@ position: relative;
 }
 
 .pagination-item {
-    background-color: #fff!important;
+    background-color: #D7D7E9!important;
     border-radius: 50%!important;
     width: 6px!important;
     height: 6px!important;
+    margin: 0!important;
     margin-right: 12px!important;
     opacity: 1!important;
     z-index: 100;
