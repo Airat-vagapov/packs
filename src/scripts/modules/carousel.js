@@ -48,3 +48,11 @@ itemsCarousel.forEach((item) => {
         });
     });
 });
+
+// Хиты продаж
+let hitsCarousel = document.querySelector('.hits-carousel');
+
+new Slide(hitsCarousel, {
+    type: 'loop',
+    perPage: 1,
+})

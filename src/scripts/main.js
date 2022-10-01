@@ -9,9 +9,7 @@ function activate(elem) {
     anime({
         targets: elem,
         opacity: 1,
-
     });
-    
 }
 
 // Активация для скролла
