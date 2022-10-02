@@ -479,7 +479,7 @@
 	.hits-item {
 		padding: 0;
 		scroll-snap-align: start;
-		width: auto;
+		max-width: 280px;
 
 	}
 
@@ -495,7 +495,7 @@
 
 	.hits-item-col {
 		padding: 0 5px;
-		min-width: 280px;
+		max-width: 280px;
 	}
 
 

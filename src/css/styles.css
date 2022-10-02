@@ -1342,7 +1342,7 @@ position: relative;
 }
 
 .hits-item {
-    width: 33.33%;
+    /* width: 33.33%; */
     padding-left: 10px;
     padding-right: 10px;
 }
