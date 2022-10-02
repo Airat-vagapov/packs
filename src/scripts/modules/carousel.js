@@ -84,3 +84,31 @@ hiddenItemsArrows.forEach((arrows) => {
         });
     });
 });
+
+let hitsBlcMob = document.querySelector('.hits-carousel-mobile');
+console.log(hitsBlcMob);
+let hitsCarouselMobile = new Splide(hitsBlcMob, {
+    type: 'loop',
+    perPage : 1,
+    
+    classes: {
+        pagination: 'splide__pagination pagination-block',
+        page: 'splide__pagination__page pagination-item',
+        arrows: 'splide__arrows hidden hits__arrows__hidden',
+    },
+})
+hitsCarouselMobile.mount();
+
+// Клик для прокрутки
+hiddenItemsArrows.forEach((arrows) => {
+    hitsArrowFwd.addEventListener('click', () => {
+        arrows.querySelectorAll('.splide__arrow--next').forEach((arw) => {
+            arw.click();
+        });
+    });
+    hitsArrowPrev.addEventListener('click', () => {
+        arrows.querySelectorAll('.splide__arrow--prev').forEach((arw) => {
+            arw.click();
+        });
+    });
+});

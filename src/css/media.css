@@ -471,8 +471,9 @@
 	/*Блок акции с товарами */
 
 	.hits {
-		align-items: flex-start;
-		display: block;
+		display: flex;
+		width: 100%;
+		overflow-x: hidden;
 	}
 
 	.hits-item {
@@ -487,10 +488,9 @@
 		margin-bottom: 24px;
 		margin-left: 0px;
 	    margin-right: -5px;
-	    min-width: 100%;
-	    overflow-x: scroll;
-	    scroll-snap-type: x mandatory;
-	    overflow-y: hidden;
+	    /* overflow-x: hidden;
+	    scroll-snap-type: x mandatory; */
+	    
 	}
 
 	.hits-item-col {
