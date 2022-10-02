@@ -33,7 +33,7 @@ itemsCarousel.forEach((item) => {
     let itemArrowFwd = itemsArrows.querySelector('.items-fwd');
     let itemArrowPrev = itemsArrows.querySelector('.items-prev');
 
-    let hiddenItemsArrows = document.querySelectorAll('.items__arrows__hidden');
+    let hiddenItemsArrows = item.querySelectorAll('.items__arrows__hidden');
 
     hiddenItemsArrows.forEach((arrows) => {
         itemArrowFwd.addEventListener('click', () => {
@@ -50,9 +50,37 @@ itemsCarousel.forEach((item) => {
 });
 
 // Хиты продаж
-let hitsCarousel = document.querySelector('.hits-carousel');
-
-new Slide(hitsCarousel, {
+let hitsBlc = document.querySelector('.hits-carousel');
+let hitsCarousel = new Splide(hitsBlc, {
     type: 'loop',
-    perPage: 1,
+    perPage : 1,
+    perMove: 1,
+    focus: 0,
+    classes: {
+        pagination: 'splide__pagination pagination-block',
+        page: 'splide__pagination__page pagination-item',
+        arrows: 'splide__arrows hidden hits__arrows__hidden',
+    },
 })
+hitsCarousel.mount();
+
+// Клик для прокрутки
+
+let itemsArrows = document.querySelector('[data-arrows="hits"]');
+let hitsArrowFwd = itemsArrows.querySelector('.hits-fwd');
+let hitsArrowPrev = itemsArrows.querySelector('.hits-prev');
+
+let hiddenItemsArrows = hitsBlc.querySelectorAll('.hits__arrows__hidden');
+
+hiddenItemsArrows.forEach((arrows) => {
+    hitsArrowFwd.addEventListener('click', () => {
+        arrows.querySelectorAll('.splide__arrow--next').forEach((arw) => {
+            arw.click();
+        });
+    });
+    hitsArrowPrev.addEventListener('click', () => {
+        arrows.querySelectorAll('.splide__arrow--prev').forEach((arw) => {
+            arw.click();
+        });
+    });
+});

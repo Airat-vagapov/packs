@@ -724,6 +724,7 @@ position: relative;
     margin-right: -10px;
     scroll-snap-type: x mandatory; */
     margin-bottom: 24px;
+    width: 100%;
     
 }
 
