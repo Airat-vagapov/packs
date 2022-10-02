@@ -490,6 +490,7 @@
 	    margin-right: -5px;
 	    /* overflow-x: hidden;
 	    scroll-snap-type: x mandatory; */
+		flex-direction: column;
 	    
 	}
 

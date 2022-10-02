@@ -85,28 +85,34 @@ hiddenItemsArrows.forEach((arrows) => {
     });
 });
 
+// Хит продаж мобилка
 let hitsBlcMob = document.querySelector('.hits-carousel-mobile');
-console.log(hitsBlcMob);
 let hitsCarouselMobile = new Splide(hitsBlcMob, {
     type: 'loop',
     perPage : 1,
-    
+    perMove: 1,
+    focus: 0,
     classes: {
         pagination: 'splide__pagination pagination-block',
         page: 'splide__pagination__page pagination-item',
-        arrows: 'splide__arrows hidden hits__arrows__hidden',
+        arrows: 'splide__arrows hidden hits__arrows__hidden_mob',
     },
 })
 hitsCarouselMobile.mount();
 
 // Клик для прокрутки
-hiddenItemsArrows.forEach((arrows) => {
-    hitsArrowFwd.addEventListener('click', () => {
+let itemsArrowsMob = document.querySelector('[data-arrows="hits-mob"]');
+let hitsArrowFwdMob = itemsArrowsMob.querySelector('.hits-fwd-mob');
+let hitsArrowPrevMob = itemsArrowsMob.querySelector('.hits-prev-mob');
+let hiddenItemsArrowsMob = hitsBlcMob.querySelectorAll('.hits__arrows__hidden_mob');
+console.log(hitsArrowFwdMob)
+hiddenItemsArrowsMob.forEach((arrows) => {
+    hitsArrowFwdMob.addEventListener('click', () => {
         arrows.querySelectorAll('.splide__arrow--next').forEach((arw) => {
             arw.click();
         });
     });
-    hitsArrowPrev.addEventListener('click', () => {
+    hitsArrowPrevMob.addEventListener('click', () => {
         arrows.querySelectorAll('.splide__arrow--prev').forEach((arw) => {
             arw.click();
         });
