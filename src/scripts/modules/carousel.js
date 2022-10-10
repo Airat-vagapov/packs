@@ -89,7 +89,7 @@ hiddenItemsArrows.forEach((arrows) => {
 let hitsBlcMob = document.querySelector('.hits-carousel-mobile');
 let hitsCarouselMobile = new Splide(hitsBlcMob, {
     type: 'loop',
-    perPage : 1,
+    perPage : 2,
     perMove: 1,
     focus: 0,
     classes: {

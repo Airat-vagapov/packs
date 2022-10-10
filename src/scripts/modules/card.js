@@ -1,0 +1,1 @@
+let cards = document.querySelectorAll('.item-cards')
