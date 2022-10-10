@@ -2,7 +2,7 @@
 let banner = document.querySelector('[data-carousel="banner"]');
 let bannerCarousel = new Splide(banner, {
     type: 'loop',
-    perPage : 1,
+    perPage: 1,
     perMove: 1,
     focus: 0,
     classes: {
@@ -17,7 +17,7 @@ let itemsCarousel = document.querySelectorAll('.items-carousel');
 itemsCarousel.forEach((item) => {
     let itemCarousel = new Splide(item, {
         type: 'loop',
-        perPage : 5,
+        perPage: 5,
         perMove: 1,
         focus: 0,
         classes: {
@@ -53,7 +53,7 @@ itemsCarousel.forEach((item) => {
 let hitsBlc = document.querySelector('.hits-carousel');
 let hitsCarousel = new Splide(hitsBlc, {
     type: 'loop',
-    perPage : 1,
+    perPage: 1,
     perMove: 1,
     focus: 0,
     classes: {
@@ -61,7 +61,7 @@ let hitsCarousel = new Splide(hitsBlc, {
         page: 'splide__pagination__page pagination-item',
         arrows: 'splide__arrows hidden hits__arrows__hidden',
     },
-})
+});
 hitsCarousel.mount();
 
 // Клик для прокрутки
@@ -89,7 +89,7 @@ hiddenItemsArrows.forEach((arrows) => {
 let hitsBlcMob = document.querySelector('.hits-carousel-mobile');
 let hitsCarouselMobile = new Splide(hitsBlcMob, {
     type: 'loop',
-    perPage : 2,
+    perPage: 2,
     perMove: 1,
     focus: 0,
     classes: {
@@ -97,15 +97,16 @@ let hitsCarouselMobile = new Splide(hitsBlcMob, {
         page: 'splide__pagination__page pagination-item',
         arrows: 'splide__arrows hidden hits__arrows__hidden_mob',
     },
-})
+});
 hitsCarouselMobile.mount();
 
 // Клик для прокрутки
 let itemsArrowsMob = document.querySelector('[data-arrows="hits-mob"]');
 let hitsArrowFwdMob = itemsArrowsMob.querySelector('.hits-fwd-mob');
 let hitsArrowPrevMob = itemsArrowsMob.querySelector('.hits-prev-mob');
-let hiddenItemsArrowsMob = hitsBlcMob.querySelectorAll('.hits__arrows__hidden_mob');
-console.log(hitsArrowFwdMob)
+let hiddenItemsArrowsMob = hitsBlcMob.querySelectorAll(
+    '.hits__arrows__hidden_mob'
+);
 hiddenItemsArrowsMob.forEach((arrows) => {
     hitsArrowFwdMob.addEventListener('click', () => {
         arrows.querySelectorAll('.splide__arrow--next').forEach((arw) => {

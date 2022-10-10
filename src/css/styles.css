@@ -967,6 +967,7 @@ position: relative;
     padding-left: 12px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .qnt-plus-btn-hor {
@@ -994,6 +995,7 @@ position: relative;
     padding-left: 4px;
     padding-right: 12px;
     height: 38px;
+    cursor: pointer;
 }
 
 .qnt-plus-btn {
