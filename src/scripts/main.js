@@ -13,6 +13,7 @@ function fadeIn (elem) {
 
 // Добавление класса active (display: flex)
 function activate(elem) {
+    
     elem.classList.add(activeClassName);
     anime({
         targets: elem,

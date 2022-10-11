@@ -20,9 +20,9 @@
 
 .popup.active {
     visibility: visible;
-    opacity: 1;
+    /* opacity: 1; */
     pointer-events: auto;
-    transition: all .3s linear;
+    /* transition: all .3s linear; */
 }
 
 .popup-fade {
