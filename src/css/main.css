@@ -362,7 +362,7 @@ h2 {
 
 .checkbox input:checked ~ .checkbox-label::before,
 .checkbox input:checked ~ .checkbox-text .checkbox-label::before {
-    content: '\e945';
+    content: '\e90a';
     position: absolute;
     top: 50%;
     left: 50%;

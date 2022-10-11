@@ -831,6 +831,10 @@ position: relative;
     color: #939393;
 }
 
+.favorite-btn {
+    cursor: pointer;
+}
+
 .favorite-btn:hover > span {
     color: #d91515;
 }
