@@ -27,13 +27,32 @@ cardCount.forEach((cnt) => {
 });
 
 // Добавление в избранное
+let count = 0;
 allCards.forEach((card) => {
     let fav = card.querySelector('.favorite-btn');
     if (fav != null) {
-        fav.addEventListener('click', () => {
+        fav.addEventListener('click', (e) => {
             const favIcon = fav.querySelector('span');
+            const favCount = document.querySelector('[data-count="fav"]');
+
+            // Меняем кнопку на карточке
             favIcon.classList.toggle('icon-heart');
             favIcon.classList.toggle('icon-heart-active');
+            if (e.target.classList.contains('icon-heart-active')) {
+                count++;
+            }
+            if (e.target.classList.contains('icon-heart')) {
+                count--;
+            }
+
+            // Управление счетчиком в шапке
+            if (count > 0) {
+                activate(favCount);
+            }
+            if (count == 0) {
+                disable(favCount);
+            }
+            favCount.innerHTML = count;
         });
     }
 });

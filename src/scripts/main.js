@@ -3,6 +3,14 @@ const activeClassName = 'active',
     subMenuActiveClass = 'submenu-active',
     disableClass = 'disable';
 
+// Fade in animation
+function fadeIn (elem) {
+    anime({
+        targets: elem,
+        opacity: 1,
+    });
+}
+
 // Добавление класса active (display: flex)
 function activate(elem) {
     elem.classList.add(activeClassName);

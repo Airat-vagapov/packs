@@ -351,6 +351,7 @@
 .head-nav-icon-count {
     display: flex;
     align-items: center;
+    
 }
 
 .count {
@@ -361,6 +362,15 @@
     background-color: #d91515;
     border-radius: 2px;
     margin-left: 4px;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+}
+
+.count.active {
+    opacity: 1;
+    pointer-events: all;
+    position: relative;
 }
 
 /*Блок с меню и баннером*/
